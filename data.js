@@ -19,6 +19,7 @@ const PJ = {
   // photoPos moves the crop: first number = left/right, second = up/down.
   photo: "https://i.ytimg.com/vi/lbHfXjL6U80/maxresdefault.jpg",
   photoPos: "78% 30%",
+  linksPhoto: "/assets/hero-links.jpg", // portrait crop (no thumbnail text) used on /links
   email: "teamthepj@gmail.com", // business email for collabs — leave "" to show Instagram DM instead
   // Team WhatsApp, written backwards (with country code 91) so bots scraping the page don't pick it up.
   // The page shows it only after someone taps. Example: 91 78743 23906 → "609323478719"
