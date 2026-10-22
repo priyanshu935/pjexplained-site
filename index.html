@@ -756,8 +756,7 @@ footer { margin-top: 112px; }
   .moc .mhead { padding-bottom: 22px; }
   .moc .mhead .label { font-size: 11px; }
   .moc .mhead .mlogo { height: auto; width: min(82%, 270px); margin: 14px 0 12px; }
-  .moc .mhead .mby { font-size: 14px; line-height: 1.45; }
-  .moc .mhead .mby span { display: block; }
+  .moc .mhead .mby { font-size: clamp(10px, 3vw, 14px); line-height: 1.45; white-space: nowrap; }
 }
 
 /* ---------- all links ---------- */
@@ -846,7 +845,7 @@ footer { margin-top: 112px; }
       <div class="label">About</div>
       <h2>Pop-Culture Enthusiast <span class="soft">&amp; Building</span> <a href="#moctale">Moctale.in</a>!</h2>
     </div>
-    <div class="who"><b data-real></b>Hyderabad · since 2017</div>
+    <div class="who"><b data-real></b></div>
   </div>
 
   <div class="totals reveal" data-totals></div>
