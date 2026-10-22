@@ -326,6 +326,16 @@ section { margin-top: 120px; scroll-margin-top: 96px; }
 .collab .box .pill { justify-content: space-between; padding: 16px 20px; font-size: 16px; }
 .collab .box .pill span { display: flex; align-items: center; gap: 10px; }
 .collab .box .pill .si, .collab .box .pill svg { font-size: 18px; }
+.collab > *, .collab .box, .collab .box .contact > * { min-width: 0; }
+.collab .box .pill { white-space: normal; }
+.collab .box .wa { width: 100%; border-radius: 16px; padding: 12px 20px 12px 14px; font-family: inherit; color: #fff; cursor: pointer; text-align: left; }
+.collab .box .wa .wai { width: 32px; height: 32px; border-radius: 50%; background: rgba(37,211,102,.22); color: #5fd38d; display: grid; place-items: center; flex: none; }
+.collab .box .wa .wai .si { font-size: 17px; }
+.collab .box .wa .wat { display: block; min-width: 0; }
+.collab .box .wa b { display: block; font-size: 15px; font-weight: 600; }
+.collab .box .wa small { display: block; font-size: 12px; font-weight: 400; color: rgba(255,255,255,.58); margin-top: 1px; }
+.collab .box .wa.open b { letter-spacing: .02em; }
+@media (max-width: 640px) { .collab .box .wa { padding: 11px 16px 11px 12px; } .collab .box .wa b { font-size: 14px; } .collab .box .wa small { font-size: 11px; } }
 
 /* footer */
 footer { margin: 96px 0 28px; }
@@ -471,6 +481,245 @@ footer { margin-top: 112px; }
   footer { margin-top: 80px; }
   .cgroup { flex-direction: column; gap: 2px; }
 }
+
+/* hero: small label above the name, status line at the bottom */
+.banner .eyebrow { margin-top: auto; font-size: 13px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--y); }
+.banner h1 { margin-top: 12px; }
+/* wordmark: "PJ" bold + "Explained" light on one line, short yellow bar underneath */
+.banner h1 { font-size: min(11.2cqi, 104px); line-height: 1; letter-spacing: -.035em; text-transform: none; white-space: nowrap; }
+.banner h1 span { display: inline; color: var(--text); font-weight: 300; }
+.banner h1::after { content: ""; display: block; width: 56px; height: 5px; border-radius: 3px; background: var(--y); margin-top: 16px; }
+.hmeta { display: flex; align-items: center; gap: 8px; margin-top: 18px; font-size: 13px; color: rgba(255,255,255,.6); }
+.hmeta .dot { opacity: .5; }
+
+/* hero buttons: two tiles with counts */
+.banner .ctas { display: grid; grid-template-columns: repeat(2, minmax(0, 220px)); gap: 10px; }
+.cta { display: flex; align-items: center; gap: 10px; padding: 10px 14px 10px 10px; border-radius: 12px; background: rgba(255,255,255,.07); border: 1px solid rgba(255,255,255,.14); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); transition: transform .2s ease, border-color .2s ease; min-width: 0; }
+.cta:hover { transform: translateY(-2px); border-color: rgba(255,198,0,.5); }
+.cta .blogo { width: 38px; height: 38px; font-size: 19px; }
+.cta b { display: block; font-size: 15px; font-weight: 600; line-height: 1.2; }
+.cta small { display: block; font-size: 12px; color: rgba(255,255,255,.6); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+
+/* reels: quiet date, no badge */
+.reel .d, .feed .reelrow .d { position: absolute; z-index: 2; left: 10px; bottom: 9px; padding: 0; background: none; border: 0; backdrop-filter: none; -webkit-backdrop-filter: none; font-size: 11px; font-weight: 400; color: rgba(255,255,255,.62); }
+
+/* instagram card: clear Instagram identity */
+.igbrand { display: flex; align-items: center; gap: 10px; }
+.igbrand .blogo { width: 32px; height: 32px; font-size: 17px; border-radius: 9px; }
+.igbrand b { font-size: 17px; font-weight: 800; letter-spacing: -.01em; }
+.igcard .ring.ig-grad { background: linear-gradient(45deg,#feda75,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5); }
+.igcard .ring.ig-grad img { border-color: var(--y); }
+.igfollow .blogo { width: 26px; height: 26px; border-radius: 50%; font-size: 14px; }
+
+/* moctale: logo leads, social links in an even grid */
+.moc .mlogo { height: 56px; margin: 18px 0 22px; }
+.moc .h2 { font-size: clamp(28px, 3vw, 40px); }
+.mpills { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.mpills a { justify-content: flex-start; padding: 10px 12px; border-radius: 10px; min-width: 0; white-space: nowrap; }
+.mpills .mi { width: 22px; height: 22px; display: grid; place-items: center; flex: none; }
+.mpills .mi .si, .mpills .mi img { width: 16px; height: 16px; font-size: 16px; border-radius: 4px; }
+
+/* ---------- phone polish: smaller, calmer scale ---------- */
+@media (max-width: 640px) {
+  body { font-size: 15px; }
+  .wrap { width: calc(100% - 28px); }
+  section { margin-top: 72px; }
+  .label { font-size: 11px; }
+  .h2 { font-size: 30px; margin-top: 8px; }
+  .head { gap: 10px; margin-bottom: 22px; }
+  .head p { font-size: 14.5px; }
+  .lead { font-size: 18px; }
+
+  /* nav */
+  .nav { top: 8px; margin-top: 8px; }
+  .logo .av { width: 34px; height: 34px; }
+  .nav .pill { padding: 8px 14px; font-size: 13px; }
+
+  /* hero */
+  .hero { margin-top: 12px; gap: 12px; }
+  .banner { padding: 18px; }
+  .banner > img { height: 430px; }
+  .banner .eyebrow { margin-top: 300px; font-size: 11px; }
+  .banner h1 { font-size: 40px; margin-top: 8px; }
+  .banner h1::after { width: 44px; height: 4px; margin-top: 12px; }
+  .hmeta { font-size: 12px; margin-top: 14px; }
+  .banner .lead { margin: 12px 0 20px; }
+  .banner .ctas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .cta { padding: 9px 10px 9px 9px; gap: 8px; }
+  .cta .blogo { width: 32px; height: 32px; font-size: 16px; }
+  .cta b { font-size: 14px; }
+  .cta small { font-size: 11px; }
+  .handles { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; margin-top: 22px; padding-top: 18px; }
+  .handles a { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
+  .handles .blogo { width: 32px; height: 32px; font-size: 16px; }
+  .handles .num { font-size: 14px; }
+  .handles .l { font-size: 10px; }
+  .feed { padding: 12px; gap: 12px; }
+  .feed .vid h4 { font-size: 15px; }
+  .feed .counts .num { font-size: 16px; }
+
+  /* about + totals */
+  .about { margin-top: 24px; padding: 24px 0 20px; gap: 10px; }
+  .about .ring { width: 56px; height: 56px; }
+  .about h2 { font-size: 21px; }
+  .total .num { font-size: 30px; }
+  .total span { font-size: 12.5px; margin-top: 6px; }
+
+  /* instagram */
+  .igcard { padding: 20px; gap: 16px; }
+  .igcard .ring { width: 58px; height: 58px; }
+  .igcard .who b { font-size: 16px; }
+  .igcard .big { font-size: 56px; }
+  .igcard .lead { font-size: 16px; }
+  .igcard .rows div { padding: 10px 0; font-size: 14px; }
+  .reels { grid-auto-columns: 56%; gap: 10px; }
+
+  /* moctale */
+  .moc { padding: 20px; gap: 28px; border-radius: 16px; }
+  .moc .mlogo { height: 40px; margin: 14px 0 14px; }
+  .moc .h2 { font-size: 26px; }
+  .moc p { font-size: 14.5px; margin-top: 12px; }
+  .mfeat { gap: 0; margin-top: 18px; }
+  .mfeat div { padding: 10px 0; }
+  .mfeat b { font-size: 14px; }
+  .mfeat span { font-size: 12.5px; }
+  .stores { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; margin-top: 20px; }
+  .store { padding: 9px 10px; gap: 8px; }
+  .store .si { font-size: 20px; }
+  .store small { font-size: 9.5px; }
+  .store b { font-size: 14px; }
+  .mstats { gap: 8px; margin-top: 20px; }
+  .mstat { padding: 12px; }
+  .mstat .num { font-size: 22px; }
+  .mstat:first-child .num { font-size: 32px; }
+  .mstat span { font-size: 11px; }
+  .mpills { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 6px; }
+  .mpills a { padding: 9px 10px; font-size: 12.5px; }
+  .phones { min-height: 330px; max-width: 300px; }
+
+  /* numbers */
+  .nums { gap: 12px; }
+  .panel { padding: 20px; gap: 16px; }
+  .panel .plat { font-size: 13.5px; gap: 10px; min-width: 0; flex-wrap: wrap; }
+  .panel .plat .blogo { width: 36px; height: 36px; font-size: 18px; }
+  .panel .circle { width: 38px; height: 38px; font-size: 14px; }
+  .panel .big { font-size: 56px; }
+  .panel .big + span { font-size: 14px; margin-top: 6px; }
+  .panel .grid3 { gap: 0 12px; }
+  .panel .grid3 .num { font-size: 18px; }
+  .panel .grid3 span { font-size: 11.5px; }
+
+  /* now playing */
+  .feature .meta, .vcard .meta { left: 16px; right: 16px; bottom: 14px; }
+  .feature { aspect-ratio: 16 / 11; }
+  .feature h4 { font-size: 19px; }
+  .feature .circle { width: 44px; height: 44px; font-size: 16px; }
+  .vcard { min-height: 0; aspect-ratio: 16 / 10; }
+  .vcard h5 { font-size: 15px; }
+  .tagrow { top: 12px; left: 12px; }
+  .strip { grid-auto-columns: 78%; gap: 12px; margin-top: 16px; }
+  .strip .t { font-size: 14px; }
+
+  /* network */
+  .yt { gap: 12px; }
+  .prof { aspect-ratio: 5 / 4; }
+  .prof h4 { font-size: 24px; }
+  .prof .count .num { font-size: 28px; }
+  .prof .info { left: 16px; right: 16px; bottom: 16px; }
+  .ntotals .num { font-size: 26px; }
+  .ntotals div { padding: 18px; }
+  .chip { padding: 14px 0; gap: 12px; }
+  .chip .av, .chip .blogo { width: 44px; height: 44px; }
+  .chip b { font-size: 14.5px; }
+  .subhead { margin: 36px 0 4px; }
+  .subhead h3 { font-size: 19px; }
+
+  /* brands */
+  .brands { grid-template-columns: repeat(3, 1fr); }
+  .brand, .brand.glass { height: 72px; padding: 10px; }
+  .brand.wide img { max-height: 20px; max-width: 80%; }
+  .brand.tall img { max-height: 38px; }
+  .brand .word { font-size: 12.5px; gap: 6px; }
+  .brand .word svg { width: 16px; height: 16px; }
+
+  /* collab */
+  .collab { padding: 22px; gap: 22px; border-radius: 16px; }
+  .collab p { font-size: 15px; }
+  .collab li { font-size: 12px; padding: 6px 12px; }
+  .collab .box { padding: 20px; gap: 18px; }
+  .collab .box .q { font-size: 20px; }
+  .collab .box .pill { padding: 13px 16px; font-size: 14px; }
+
+  .fwrap { padding: 20px; }
+}
+
+/* ---------- calmer media cards ---------- */
+/* channel / time labels: plain faded text, no pill */
+.tagrow { gap: 0; align-items: center; }
+.tagrow .pill { background: none; border: 0; backdrop-filter: none; -webkit-backdrop-filter: none; box-shadow: none; padding: 0; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.72); text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+.tagrow .pill:hover { transform: none; }
+.feature::before, .vcard::before, .prof::before, .feed .vid::before { content: ""; position: absolute; z-index: 1; left: 0; right: 0; top: 0; height: 38%; background: linear-gradient(180deg, rgba(0,0,0,.55), rgba(0,0,0,0)); pointer-events: none; }
+.tagrow .pill + .pill::before { content: "·"; margin: 0 7px; opacity: .7; }
+/* titles: lighter */
+.feature h4 { font-size: clamp(18px, 1.8vw, 26px); font-weight: 600; letter-spacing: -.015em; line-height: 1.2; }
+.vcard h5, .feed .vid h4 { font-size: 15px; font-weight: 600; letter-spacing: -.01em; line-height: 1.25; }
+/* play button: small and quiet */
+.feature .circle, .vcard .circle, .feed .vid .circle { width: 36px; height: 36px; font-size: 13px; background: rgba(255,255,255,.16); color: #fff; border: 1px solid rgba(255,255,255,.25); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+/* network cards */
+.prof .badge { width: 30px; height: 30px; font-size: 15px; border-radius: 8px; }
+.prof h4 { font-size: 26px; font-weight: 700; }
+.prof .count .num { font-size: 28px; }
+.prof .count span { font-size: 12px; }
+.prof .foot .pill-y { background: rgba(255,255,255,.14); color: #fff; border: 1px solid rgba(255,255,255,.24); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); padding: 7px 14px; font-size: 13px; font-weight: 500; }
+/* thinner nav */
+.nav .bar { padding: 4px 4px 4px 5px; }
+.logo .av { width: 32px; height: 32px; padding: 2px; }
+.logo { font-size: 15px; gap: 10px; }
+.nav .pill { padding: 7px 14px; font-size: 13px; }
+.nav ul a { padding: 7px 12px; font-size: 13px; }
+/* instagram card: softer yellow drifting into Instagram colours */
+.igcard.duo { background: linear-gradient(150deg, rgba(255,198,0,.9) 0%, rgba(255,176,46,.84) 38%, rgba(240,110,95,.8) 72%, rgba(186,78,170,.78) 100%); }
+.igcard .duo-bg img { opacity: .16; }
+
+/* instagram card buttons, Instagram-profile style */
+.igbtns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.igb { display: grid; place-items: center; padding: 12px; border-radius: 10px; font-size: 14px; font-weight: 600; transition: transform .2s ease, filter .2s ease; }
+.igb:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.igb.follow { background: linear-gradient(180deg, #2e66a8, #23558f); color: #fff; }
+.igb.watch { background: rgba(255,255,255,.55); color: #0a0a0a; }
+/* channel cards: clean overlay — label on top, one line of info at the bottom */
+.prof .ptag { position: absolute; z-index: 2; top: 16px; left: 18px; display: flex; align-items: center; gap: 8px; font-size: 12px; font-weight: 500; color: rgba(255,255,255,.82); text-shadow: 0 1px 8px rgba(0,0,0,.6); }
+.prof .ptag .badge { width: 22px; height: 22px; font-size: 11px; border-radius: 6px; }
+.prof .info { left: 18px; right: 18px; bottom: 18px; }
+.prof h4 { font-size: 24px; font-weight: 700; letter-spacing: -.02em; }
+.prof .pmeta { margin-top: 6px; font-size: 13px; color: rgba(255,255,255,.75); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.prof .pmeta b { color: var(--y); font-weight: 700; }
+.prof .pmeta span { opacity: .6; margin: 0 4px; }
+
+/* collab: services as an even two-column list instead of loose pills */
+.collab ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 20px; margin-top: 22px; border-top: 1px solid rgba(10,10,10,.22); }
+.collab li { display: flex; align-items: center; gap: 10px; padding: 11px 0; border: 0; border-bottom: 1px solid rgba(10,10,10,.14); border-radius: 0; background: none; font-size: 14px; font-weight: 600; }
+.collab li::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: #0a0a0a; flex: none; }
+@media (max-width: 640px) { .collab ul { grid-template-columns: 1fr; } .collab li { font-size: 13.5px; padding: 10px 0; } }
+
+/* lighter numbers in the hero platform row, smaller hero video title */
+.handles .num { font-weight: 600; }
+.feed .vid h4 { font-size: 13.5px; }
+/* moctale logo: a 2px optical nudge so its rounded left edge lines up with the text below */
+.moc .mlogo { margin-left: -2px; }
+
+@media (max-width: 640px) {
+  .igb { padding: 11px; font-size: 13.5px; }
+  .feed .vid h4 { font-size: 13px; }
+  .feature h4 { font-size: 16px; }
+  .vcard h5, .feed .vid h4 { font-size: 14px; }
+  .feature .circle, .vcard .circle, .feed .vid .circle { width: 32px; height: 32px; font-size: 12px; }
+  .tagrow .pill { font-size: 11.5px; }
+  .prof h4 { font-size: 22px; }
+  .prof .count .num { font-size: 24px; }
+  .nav .pill { padding: 6px 12px; font-size: 12.5px; }
+  .logo .av { width: 30px; height: 30px; }
+}
 </style>
 </head>
 <body>
@@ -496,17 +745,15 @@ footer { margin-top: 112px; }
   <header class="hero" id="top">
     <div class="media banner">
       <img data-photo alt="PJ Explained">
-      <div class="tags">
-        <span class="pill pill-glass pill-sm"><span class="live"></span><span data-updated></span></span>
-        <span class="pill pill-glass pill-sm">Film and pop-culture creator · since 2017</span>
-      </div>
+      <div class="eyebrow">Film and pop-culture enthusiast</div>
       <h1>PJ <span>Explained</span></h1>
       <p class="lead" data-tagline></p>
       <div class="ctas">
-        <a class="pill pill-lg pill-y" data-yt-link target="_blank" rel="noopener"><span data-yt-icon></span>Subscribe on YouTube</a>
-        <a class="pill pill-lg pill-glass" data-ig-link target="_blank" rel="noopener"><span data-ig-icon></span>Follow on Instagram</a>
+        <a class="cta" data-yt-link target="_blank" rel="noopener"><span class="blogo" style="background:#ff0000" data-yt-icon></span><span><b>Subscribe</b><small data-yt-sub></small></span></a>
+        <a class="cta" data-ig-link target="_blank" rel="noopener"><span class="blogo ig-grad" data-ig-icon></span><span><b>Follow</b><small data-ig-sub></small></span></a>
       </div>
       <div class="handles" data-handles></div>
+      <div class="hmeta"><span class="live"></span><span data-updated></span><span class="dot">·</span><span>Creating since 2017</span></div>
     </div>
 
     <aside class="feed glass">
@@ -655,8 +902,10 @@ $("[data-updated]").textContent = updatedLabel();
 $("[data-updated-2]").textContent = updatedLabel();
 $("[data-yt-link]").href = YT.url;
 $("[data-ig-link]").href = IG.url;
-$("[data-yt-icon]").outerHTML = logoMask("youtube");
-$("[data-ig-icon]").outerHTML = logoMask("instagram");
+$("[data-yt-icon]").innerHTML = logoMask("youtube");
+$("[data-ig-icon]").innerHTML = logoMask("instagram");
+$("[data-yt-sub]").textContent = `${YT.subs} on YouTube`;
+$("[data-ig-sub]").textContent = `${IG.followers} on Instagram`;
 $("[data-handles]").innerHTML = [
   { ...ytTile, n: YT.subs, l: "YouTube", url: YT.url },
   ...["instagram", "facebook", "threads", "x"].map(k => { const s = social(k); return { ...s, n: s.count, l: s.name }; })
@@ -670,7 +919,7 @@ $("[data-feed-video]").innerHTML = `
     <div class="meta"><div><h4>${esc(lv.title)}</h4><div class="v">${ICON.eye} ${esc(lv.views)} views</div></div><span class="circle">${ICON.play}</span></div>
   </a>`;
 $("[data-feed-reels]").innerHTML = PJ.reels.slice(0, 3).map(r => `
-  <a href="${esc(r.url)}" ${blank}>${img(r.img, "Instagram reel")}<span class="i blogo ig-grad">${logoMask("instagram")}</span><span class="d pill pill-glass pill-sm">${esc(ago(r.date))}</span></a>`).join("");
+  <a href="${esc(r.url)}" ${blank}>${img(r.img, "Instagram reel")}<span class="d">${esc(ago(r.date))}</span></a>`).join("");
 $("[data-feed-counts]").innerHTML = `
   <div><span class="num">${logoMask("youtube")}${esc(YT.subs)}</span><span>YouTube</span></div>
   <div><span class="num">${logoMask("instagram")}${esc(IG.followers)}</span><span>Instagram</span></div>
@@ -685,15 +934,16 @@ duo(duoTotals[1], PJ.reels[0].img);
 // instagram
 const igRows = [["Posts", IG.posts], ["New reels", IG.rhythm], ["Avg. reel views", IG.avgViews], ["Engagement", IG.engagement]].filter(r => r[1]);
 $("[data-igcard]").innerHTML = `
-  <div class="who"><span class="ring">${img(IG.avatar, IG.name)}</span><div><b>${esc(IG.handle)} <span class="tick" style="color:#0a0a0a">${ICON.check}</span></b><span>${esc(IG.name)} on Instagram</span></div></div>
+  <div class="igbrand"><span class="blogo ig-grad">${logoMask("instagram")}</span><b>Instagram</b></div>
+  <div class="who"><span class="ring ig-grad">${img(IG.avatar, IG.name)}</span><div><b>${esc(IG.handle)} <span class="tick" style="color:#0a0a0a">${ICON.check}</span></b><span>${esc(IG.name)}</span></div></div>
   <div><span class="num big">${esc(IG.followers)}</span><span>followers</span></div>
   <p class="lead">Trailer drops, hot takes and reactions, posted the same day it happens.</p>
   <div class="rows">${igRows.map(r => `<div><span>${r[0]}</span><b>${esc(r[1])}</b></div>`).join("")}</div>
-  <a class="pill pill-lg pill-k" href="${esc(IG.url)}" ${blank}>${logoMask("instagram")} Follow ${esc(IG.handle)}</a>`;
+  <div class="igbtns"><a class="igb follow" href="${esc(IG.url)}" ${blank}>Follow</a><a class="igb watch" href="${esc(IG.url.replace(/\/?$/, "/reels/"))}" ${blank}>Watch reels</a></div>`;
 duo($("[data-igcard]"), PJ.reels[4].img);
 $("[data-reels]").innerHTML = PJ.reels.slice(0, 8).map(r => `
   <a class="media shade reel" href="${esc(r.url)}" ${blank}>${img(r.img, "Instagram reel")}
-    <span class="ic blogo ig-grad">${logoMask("instagram")}</span><span class="d pill pill-glass pill-sm">${esc(ago(r.date))}</span></a>`).join("");
+    <span class="d">${esc(ago(r.date))}</span></a>`).join("");
 
 // moctale
 $("[data-moc-logo]").src = M.logo;
@@ -703,7 +953,7 @@ $("[data-stores]").innerHTML = `
   <a class="store" href="${esc(M.ios)}" ${blank}>${logoMask("apple")}<span><small>Download on the</small><b>App Store</b></span></a>
   <a class="store" href="${esc(M.android)}" ${blank}>${logoMask("googleplay")}<span><small>Get it on</small><b>Google Play</b></span></a>`;
 $("[data-mstats]").innerHTML = M.stats.map(s => `<div class="mstat glass">${num(s.value)}<span>${esc(s.label)}</span></div>`).join("");
-$("[data-mpills]").innerHTML = M.links.map(l => `<a class="glass" href="${esc(l.url)}" ${blank}>${l.logo ? logoMask(l.logo) : img(M.icon, "")}${esc(l.name)}</a>`).join("");
+$("[data-mpills]").innerHTML = M.links.map(l => `<a class="glass" href="${esc(l.url)}" ${blank}><span class="mi">${l.logo ? logoMask(l.logo) : img(M.icon, "")}</span>${esc(l.name)}</a>`).join("");
 $("[data-phones]").innerHTML = M.screens.map(s => `<div class="phone">${img(s, "Moctale app screen")}</div>`).join("");
 
 // by the numbers
@@ -734,10 +984,10 @@ $("[data-strip]").innerHTML = rest.map(v => `<a href="${watch(v.id)}" ${blank}><
 // network
 $("[data-yt]").innerHTML = own.map(c => `
   <a class="media shade prof" href="${esc(c.url)}" ${blank}>${img(thumb(c.cover), c.name, `style="object-position:${esc(c.coverPos || "50% 50%")}" onerror="${thumbFallback}"`)}
-    <div class="tagrow"><span class="pill pill-glass pill-sm">${esc(c.tag)}</span><span class="badge">${logoMask("youtube")}</span></div>
+    <div class="ptag"><span class="badge">${logoMask("youtube")}</span>${esc(c.tag)}</div>
     <div class="info">
-      <h4>${esc(c.name)}</h4><div class="handle"><span class="av">${img(c.avatar, "")}</span>${esc(c.handle)}</div>
-      <div class="foot"><div class="count">${num(c.subs)}<span>subscribers</span></div><span class="pill pill-y">Subscribe</span></div>
+      <h4>${esc(c.name)}</h4>
+      <div class="pmeta"><b>${esc(c.subs)}</b> subscribers <span>·</span> ${esc(c.handle)}</div>
     </div></a>`).join("");
 $("[data-ntotals]").innerHTML = PJ.networkTotals.map(t => `<div>${num(t.value)}<span>${esc(t.label)}</span></div>`).join("");
 duo($("[data-ntotals]"), thumb(PJ.latest[1].id));
@@ -766,7 +1016,22 @@ $("[data-brands]").innerHTML = PJ.brands.map(b => {
 $("[data-collab]").innerHTML = PJ.collab.map(c => `<li>${esc(c)}</li>`).join("");
 duo($("[data-collab-card]"), thumb(PJ.channels[1].cover));
 $("[data-contact]").innerHTML = (PJ.email ? `<a class="pill pill-y pill-img" style="--img:url('${thumb(PJ.latest[0].id)}')" href="mailto:${esc(PJ.email)}"><span>${ICON.mail}${esc(PJ.email)}</span>${ICON.arrow}</a>` : "")
+  + (PJ.teamWhatsApp ? `<button type="button" class="pill pill-glass wa" data-wa><span><span class="wai">${logoMask("whatsapp")}</span><span class="wat"><b data-wa-num>WhatsApp the team</b><small data-wa-note>Tap to reveal · reaches PJ Explained's team</small></span></span><span data-wa-arrow>${ICON.arrow}</span></button>` : "")
   + `<a class="pill pill-glass" href="${esc(IG.url)}" ${blank}><span>${logoMask("instagram")}DM on Instagram</span>${ICON.arrow}</a>`;
+
+// team WhatsApp: hidden until tapped, then it becomes a WhatsApp link
+const waBtn = $("[data-wa]");
+if (waBtn) waBtn.addEventListener("click", () => {
+  const d = PJ.teamWhatsApp.split("").reverse().join("");
+  const pretty = `+${d.slice(0, 2)} ${d.slice(2, 7)} ${d.slice(7)}`;
+  const a = document.createElement("a");
+  a.className = waBtn.className + " open";
+  a.href = `https://wa.me/${d}`; a.target = "_blank"; a.rel = "noopener";
+  a.innerHTML = waBtn.innerHTML;
+  a.querySelector("[data-wa-num]").textContent = pretty;
+  a.querySelector("[data-wa-note]").textContent = "Connects you to PJ Explained's team · tap to chat";
+  waBtn.replaceWith(a);
+}, { once: true });
 
 // soft dissolve-in as sections scroll into view
 const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .08 });

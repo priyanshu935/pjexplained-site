@@ -20,6 +20,9 @@ const PJ = {
   photo: "https://i.ytimg.com/vi/lbHfXjL6U80/maxresdefault.jpg",
   photoPos: "78% 30%",
   email: "teamthepj@gmail.com", // business email for collabs — leave "" to show Instagram DM instead
+  // Team WhatsApp, written backwards (with country code 91) so bots scraping the page don't pick it up.
+  // The page shows it only after someone taps. Example: 91 78743 23906 → "609323478719"
+  teamWhatsApp: "609323478719",
 
   youtube: {
     name: "PJ Explained", handle: "@PJExplained", url: "https://www.youtube.com/@PJExplained",
@@ -69,7 +72,7 @@ const PJ = {
     { name: "Men of Culture Ultra",      handle: "@MenofCultureUltra",      subs: "165K",  videos: "271",  url: "https://www.youtube.com/@MenofCultureUltra", tag: "Podcast extension", group: "moc", ext: true, icon: "podcast",
       avatar: "https://yt3.googleusercontent.com/1rOrRYgogQ5e4VKojTNG7zU4-V3SxhSJFr-s-WOHpa8vBESdLjyzY0kUFMSrXExHGkq4_3jH=s160-c-k-c0x00ffffff-no-rj" },
     { name: "thePJ Gaming",              handle: "@gamingthepj",            subs: "70.1K", videos: "6",    url: "https://www.youtube.com/@gamingthepj", tag: "Gaming", group: "pj", icon: "gaming",
-      avatar: "https://i.ytimg.com/vi/xly8qjzfNjA/hqdefault.jpg" }, // a frame from the channel's video (its YouTube logo only loads on YouTube)
+      avatar: "/assets/thepj-gaming.jpg" },
     { name: "Moctale",                   handle: "@moctaleYT",              subs: "5.51K", videos: "1",    url: "https://www.youtube.com/@moctaleYT", tag: "Moctale", group: "moctale", icon: "moctale",
       avatar: "https://yt3.googleusercontent.com/v0sbLWpp3mInP9SesAXcon7jd-bMDpMeEoNpragTVZ4SrO1qnvF8sMNzlHuFKKeVuDW8h2-zNb0=s120-c-k-c0x00ffffff-no-rj" }
   ],
