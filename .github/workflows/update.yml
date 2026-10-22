@@ -1,0 +1,46 @@
+name: Update live data
+
+# Refreshes numbers, videos and reels every 3 hours, and on demand from the Actions tab.
+on:
+  schedule:
+    - cron: "17 */3 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-live-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Fetch fresh data
+        run: node scripts/update.mjs
+        env:
+          YT_API_KEY: ${{ secrets.YT_API_KEY }}
+          META_TOKEN: ${{ secrets.META_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+          FB_PAGE_ID: ${{ secrets.FB_PAGE_ID }}
+          THREADS_TOKEN: ${{ secrets.THREADS_TOKEN }}
+          THREADS_USER_ID: ${{ secrets.THREADS_USER_ID }}
+
+      - name: Save changes
+        run: |
+          git config user.name "pjexplained-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data-live.js live.json
+          if git diff --staged --quiet; then
+            echo "Nothing changed"
+          else
+            git commit -m "Update live numbers, videos and reels"
+            git push
+          fi

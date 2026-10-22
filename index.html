@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PJ Explained</title>
+<meta name="description" content="PJ Explained — Pop-Culture Enthusiast and building Moctale.in. 2.69M on YouTube, 934K on Instagram, 5.3M+ followers across platforms.">
+<meta name="theme-color" content="#0a0a0a">
+<meta property="og:title" content="PJ Explained">
+<meta property="og:description" content="Pop-Culture Enthusiast & Building Moctale.in!">
+<meta property="og:url" content="https://pjexplained.com">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='32' fill='%23ffc600'/><text x='32' y='42' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%230a0a0a'>PJ</text></svg>">
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+<link rel="stylesheet" href="trueno.css">
+<script src="data.js"></script>
+<script src="data-live.js"></script>
+<style>
+/*
+  Type system — Trueno only, four weights:
+  300 light (lead text) · 400 regular (body) · 600 semibold (UI, labels) · 800 extrabold (headings, numbers)
+  Headings are sentence case; only the hero name and small labels are uppercase. No italics.
+*/
+:root {
+  --y: #ffc600;
+  --bg: #0a0a0a;
+  --text: #f4f4f1;
+  --muted: #a1a19b;
+  --glass: rgba(255,255,255,.05);
+  --stroke: rgba(255,255,255,.1);
+  --m: #a57bff;
+  --r: 18px;
+  --r-sm: 12px;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: "Trueno", system-ui, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+svg { width: 1em; height: 1em; flex: none; }
+.wrap { width: min(1200px, 100% - 32px); margin-inline: auto; position: relative; }
+
+/* type */
+.label { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--y); }
+.h2 { font-size: clamp(36px, 4.4vw, 60px); font-weight: 800; letter-spacing: -.03em; line-height: 1.02; margin-top: 12px; }
+.accent { color: var(--y); }
+.num { font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.lead { font-weight: 300; font-size: clamp(20px, 2vw, 26px); line-height: 1.35; }
+.muted { color: var(--muted); }
+
+/* ambient light behind the glass + a light film grain */
+.ambient { position: fixed; inset: -10%; z-index: -1; pointer-events: none; overflow: hidden; }
+.ambient img { position: absolute; width: 60%; height: 60%; filter: blur(100px) saturate(1.3); opacity: .22; animation: drift 30s ease-in-out infinite alternate; }
+.ambient img:nth-child(1) { top: 0; left: -5%; }
+.ambient img:nth-child(2) { bottom: 0; right: -5%; animation-delay: -15s; }
+.ambient::after { content: ""; position: absolute; inset: 0; background: radial-gradient(40% 35% at 75% 15%, rgba(255,198,0,.1), transparent 70%), rgba(10,10,10,.6); }
+@keyframes drift { to { transform: translate(5%, 4%) scale(1.1); } }
+body::after { content: ""; position: fixed; inset: -50%; z-index: 100; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.4s steps(5) infinite; }
+@keyframes grain { 0%{transform:translate(0,0)} 25%{transform:translate(-3%,2%)} 50%{transform:translate(2%,-3%)} 75%{transform:translate(3%,3%)} 100%{transform:translate(0,0)} }
+
+/* liquid glass */
+.glass { position: relative; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)); border: 1px solid var(--stroke); backdrop-filter: blur(24px) saturate(160%); -webkit-backdrop-filter: blur(24px) saturate(160%); box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 24px 48px -32px rgba(0,0,0,.8); }
+
+/* yellow surfaces carry a faint photo, faded away from the text */
+.duo { position: relative; isolation: isolate; overflow: hidden; background: var(--y); color: #0a0a0a; }
+.duo-bg { position: absolute; inset: 0; z-index: -1; pointer-events: none; -webkit-mask-image: linear-gradient(100deg, transparent 38%, rgba(0,0,0,.9) 92%); mask-image: linear-gradient(100deg, transparent 38%, rgba(0,0,0,.9) 92%); }
+.duo-bg img { filter: grayscale(1) contrast(1.15); mix-blend-mode: multiply; opacity: .28; }
+.pill-img { position: relative; isolation: isolate; overflow: hidden; }
+.pill-img::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--img) center / cover; filter: grayscale(1) contrast(1.2); mix-blend-mode: multiply; opacity: .35; -webkit-mask-image: linear-gradient(90deg, transparent 15%, #000 85%); mask-image: linear-gradient(90deg, transparent 15%, #000 85%); }
+
+/* soft dissolve in on scroll */
+.reveal { opacity: 0; filter: blur(10px); transform: translateY(20px); transition: opacity .9s ease, filter .9s ease, transform .9s ease; }
+.reveal.in { opacity: 1; filter: none; transform: none; }
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; filter: none; transform: none; } .ambient img, body::after { animation: none; } }
+
+/* controls */
+.pill { display: inline-flex; align-items: center; justify-content: center; gap: 8px; padding: 10px 18px; border-radius: 999px; font-size: 14px; font-weight: 600; white-space: nowrap; transition: transform .2s ease; }
+.pill:hover { transform: translateY(-2px); }
+.pill-lg { padding: 14px 22px; font-size: 15px; }
+.pill-y { background: var(--y); color: #0a0a0a; }
+.pill-k { background: #0a0a0a; color: var(--text); }
+.pill-glass { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.16); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); color: #fff; }
+.pill-sm { padding: 6px 12px; font-size: 12px; }
+.circle { width: 48px; height: 48px; border-radius: 50%; display: grid; place-items: center; flex: none; font-size: 18px; background: var(--y); color: #0a0a0a; transition: transform .2s ease; }
+a:hover .circle.spin, a.circle.spin:hover { transform: rotate(45deg); }
+.live { width: 7px; height: 7px; border-radius: 50%; background: #ff3b30; box-shadow: 0 0 0 4px rgba(255,59,48,.22); animation: pulse 2s infinite; flex: none; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 7px rgba(255,59,48,0); } }
+.tick { display: inline-grid; color: var(--y); font-size: .6em; vertical-align: middle; }
+.si { display: block; width: 1em; height: 1em; background: currentColor; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; flex: none; }
+.blogo { width: 36px; height: 36px; border-radius: 11px; display: grid; place-items: center; font-size: 18px; color: #fff; flex: none; }
+.ig-grad { background: linear-gradient(45deg,#feda75,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5); color: #fff; }
+/* brand colours, toned down so they sit quietly in the dark glass */
+.blogo, .prof .badge { filter: saturate(.5) brightness(.92); }
+.media { position: relative; overflow: hidden; border-radius: var(--r); background: rgba(255,255,255,.04); }
+.media img { transition: transform .6s ease; }
+a.media:hover img, a:hover > .media img { transform: scale(1.04); }
+.shade::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.82) 100%); pointer-events: none; }
+.tagrow { position: absolute; z-index: 2; top: 18px; left: 18px; display: flex; gap: 6px; }
+
+/* nav */
+.nav { position: sticky; top: 12px; z-index: 50; margin-top: 12px; }
+.nav .bar { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 6px 6px 6px 8px; border-radius: 999px; }
+.logo { display: flex; align-items: center; gap: 12px; font-size: 16px; font-weight: 300; }
+.logo .av { width: 40px; height: 40px; border-radius: 50%; overflow: hidden; padding: 2px; background: var(--y); flex: none; }
+.logo .av img { border-radius: 50%; }
+.logo b { font-weight: 600; }
+.nav ul { display: flex; gap: 2px; list-style: none; }
+.nav ul a { display: block; padding: 9px 14px; border-radius: 999px; font-size: 14px; color: var(--muted); }
+.nav ul a:hover { color: var(--text); background: rgba(255,255,255,.07); }
+
+/* hero */
+.hero { display: grid; grid-template-columns: 7fr 5fr; gap: 16px; margin-top: 16px; }
+.banner { min-height: 700px; display: flex; flex-direction: column; padding: 32px; container-type: inline-size; border: 1px solid var(--stroke); }
+.banner > img { position: absolute; inset: 0; }
+.banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(90deg, rgba(10,10,10,.9) 0%, rgba(10,10,10,.6) 42%, rgba(10,10,10,0) 78%), linear-gradient(0deg, rgba(10,10,10,.88) 0%, rgba(10,10,10,0) 48%); pointer-events: none; }
+.banner > * { position: relative; z-index: 2; }
+.banner .tags { display: flex; gap: 8px; flex-wrap: wrap; }
+.banner h1 { font-size: min(13.6cqi, 128px); font-weight: 800; letter-spacing: -.04em; line-height: .9; text-transform: uppercase; margin-top: auto; }
+.banner h1 span { color: var(--y); display: block; }
+.banner .lead { margin: 18px 0 26px; max-width: 480px; color: #fff; }
+.banner .ctas { display: flex; gap: 10px; flex-wrap: wrap; }
+.banner .ctas .si { font-size: 18px; }
+.handles { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 8px; margin-top: 24px; }
+.handles a { display: flex; align-items: center; gap: 8px; padding: 7px; border-radius: 12px; min-width: 0; }
+.handles a > span:last-child { min-width: 0; }
+.handles .num { font-size: 16px; display: block; }
+.handles .l { font-size: 12px; color: rgba(255,255,255,.66); line-height: 1.2; }
+
+.feed { border-radius: var(--r); padding: 18px; display: flex; flex-direction: column; gap: 14px; }
+.feed .fh { display: flex; justify-content: space-between; align-items: center; padding: 2px 4px 0; font-size: 14px; }
+.feed .fh .t { display: flex; align-items: center; gap: 10px; font-weight: 600; }
+.feed .fh .u { font-size: 12px; color: var(--muted); }
+.feed .vid { display: block; aspect-ratio: 16 / 9; border-radius: var(--r-sm); }
+.feed .vid .tagrow { top: 12px; left: 12px; }
+.feed .vid .meta { position: absolute; z-index: 2; left: 16px; right: 16px; bottom: 14px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.feed .vid h4 { font-size: 17px; line-height: 1.2; font-weight: 800; letter-spacing: -.02em; }
+.feed .vid .v { display: flex; align-items: center; gap: 6px; font-size: 12px; color: rgba(255,255,255,.75); margin-top: 6px; }
+.feed .vid .circle { width: 40px; height: 40px; font-size: 15px; }
+.feed .sub { display: flex; justify-content: space-between; align-items: baseline; padding: 2px 4px 0; font-size: 14px; }
+.feed .sub b { font-weight: 600; }
+.feed .sub span { font-size: 12px; color: var(--muted); }
+.feed .reelrow { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; flex: 1; min-height: 0; }
+.feed .reelrow a { position: relative; border-radius: 12px; overflow: hidden; background: #000; min-height: 200px; }
+.feed .reelrow a::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,.7)); }
+.feed .reelrow .d { position: absolute; z-index: 2; left: 8px; bottom: 8px; }
+.feed .reelrow .i { position: absolute; z-index: 2; top: 8px; right: 8px; width: 26px; height: 26px; border-radius: 8px; font-size: 14px; }
+.feed .counts { display: grid; grid-template-columns: repeat(3, 1fr); border-radius: var(--r-sm); }
+.feed .counts div { padding: 12px 14px; }
+.feed .counts div + div { border-left: 1px solid var(--stroke); }
+.feed .counts .num { display: flex; align-items: center; gap: 6px; font-size: 19px; color: var(--y); }
+.feed .counts .si { font-size: 13px; color: var(--text); }
+.feed .counts span { font-size: 11px; color: var(--muted); }
+
+/* about */
+.about { margin-top: 16px; border-radius: var(--r); padding: 20px 28px 20px 20px; display: flex; align-items: center; gap: 22px; }
+.about .ring { width: 80px; height: 80px; border-radius: 50%; padding: 3px; background: var(--y); flex: none; }
+.about .ring img { border-radius: 50%; border: 3px solid #0a0a0a; }
+.about .txt { flex: 1; min-width: 0; }
+.about h2 { font-size: clamp(22px, 2.6vw, 34px); line-height: 1.15; font-weight: 800; letter-spacing: -.025em; margin-top: 4px; }
+.about h2 .soft { font-weight: 300; }
+.about h2 a { color: var(--y); }
+.about .who { text-align: right; color: var(--muted); font-size: 14px; flex: none; }
+.about .who b { display: block; color: var(--text); font-weight: 600; }
+
+/* totals */
+.totals { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 16px; }
+.total { border-radius: var(--r); padding: 26px 26px 24px; }
+.total .num { display: block; font-size: clamp(34px, 3.4vw, 48px); color: var(--y); }
+.total span { display: block; margin-top: 8px; font-size: 14px; color: var(--muted); }
+.total.duo .num { color: #0a0a0a; }
+.total.duo span { color: rgba(10,10,10,.7); font-weight: 600; }
+
+/* sections */
+section { margin-top: 120px; scroll-margin-top: 96px; }
+.head { display: flex; align-items: flex-end; justify-content: space-between; gap: 24px; margin-bottom: 32px; flex-wrap: wrap; }
+.head p { color: var(--muted); max-width: 360px; font-size: 16px; }
+.subhead { display: flex; justify-content: space-between; align-items: baseline; margin: 48px 4px 16px; }
+.subhead h3 { font-size: 24px; font-weight: 800; letter-spacing: -.02em; }
+.subhead span { color: var(--muted); font-size: 14px; }
+
+/* instagram */
+.ig { display: grid; grid-template-columns: 4fr 8fr; gap: 16px; }
+.igcard { border-radius: var(--r); padding: 30px; display: flex; flex-direction: column; gap: 22px; }
+.igcard .who { display: flex; align-items: center; gap: 14px; }
+.igcard .ring { width: 72px; height: 72px; border-radius: 50%; padding: 3px; background: #0a0a0a; flex: none; }
+.igcard .ring img { border-radius: 50%; border: 2px solid var(--y); }
+.igcard .who b { display: flex; align-items: center; gap: 6px; font-size: 18px; font-weight: 800; letter-spacing: -.02em; }
+.igcard .who span { font-size: 14px; color: rgba(10,10,10,.7); }
+.igcard .big { font-size: clamp(64px, 6.4vw, 96px); }
+.igcard .big + span { display: block; font-size: 15px; font-weight: 600; margin-top: 6px; }
+.igcard .lead { font-size: 20px; }
+.igcard .rows { border-top: 1px solid rgba(10,10,10,.6); margin-top: auto; }
+.igcard .rows div { display: flex; justify-content: space-between; padding: 12px 0; border-bottom: 1px solid rgba(10,10,10,.14); font-size: 15px; }
+.igcard .rows b { font-weight: 800; }
+.reels { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.reel { display: block; aspect-ratio: 9 / 16; border-radius: var(--r-sm); }
+.reel .ic { position: absolute; z-index: 2; top: 12px; right: 12px; width: 30px; height: 30px; border-radius: 9px; font-size: 16px; }
+.reel .d { position: absolute; z-index: 2; left: 12px; bottom: 12px; }
+
+/* moctale */
+.moc { border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 1.05fr 1fr; gap: 40px; overflow: hidden; }
+.moc::before { content: ""; position: absolute; inset: 0; z-index: 0; pointer-events: none; background: radial-gradient(55% 60% at 85% 40%, rgba(150,90,255,.38), transparent 70%), radial-gradient(40% 50% at 0% 100%, rgba(150,90,255,.16), transparent 70%); }
+.moc > * { position: relative; z-index: 1; min-width: 0; }
+.moc .label { color: var(--m); }
+.moc .mlogo { height: 40px; width: auto; max-width: 100%; margin: 22px 0 24px; }
+.moc .h2 .accent { color: var(--m); }
+.moc p { color: #d4d1dd; max-width: 500px; margin-top: 18px; }
+.mfeat { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 24px; }
+.mfeat div { padding-top: 12px; border-top: 2px solid var(--m); }
+.mfeat b { display: block; font-size: 15px; font-weight: 800; letter-spacing: -.01em; }
+.mfeat span { display: block; margin-top: 4px; font-size: 13px; line-height: 1.45; color: #c4bfd2; }
+.stores { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+.store { display: flex; align-items: center; gap: 12px; padding: 11px 22px 11px 16px; border-radius: 12px; background: #0a0a0a; border: 1px solid rgba(255,255,255,.2); transition: transform .2s ease, border-color .2s ease; }
+.store:hover { transform: translateY(-2px); border-color: var(--m); }
+.store .si { font-size: 26px; }
+.store small { display: block; font-size: 11px; color: #b5b5b5; line-height: 1.2; }
+.store b { display: block; font-size: 18px; font-weight: 600; letter-spacing: -.01em; line-height: 1.2; }
+.mstats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 28px; }
+.mstat { border-radius: var(--r-sm); padding: 16px; }
+.mstat .num { display: block; font-size: 28px; color: #fff; }
+.mstat span { display: block; margin-top: 6px; font-size: 12px; color: #c4bfd2; line-height: 1.35; }
+.mstat:first-child { grid-column: span 2; background: rgba(150,90,255,.2); border-color: rgba(190,160,255,.3); }
+.mstat:first-child .num { font-size: 44px; }
+.mpills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 18px; }
+.mpills a { display: flex; align-items: center; gap: 8px; padding: 8px 14px 8px 10px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+.mpills .si, .mpills img { width: 16px; height: 16px; font-size: 16px; border-radius: 4px; }
+.phones { position: relative; min-height: 600px; }
+.phone { position: absolute; width: 46%; aspect-ratio: 1 / 2; border-radius: 32px; overflow: hidden; border: 6px solid #111; box-shadow: 0 40px 80px -24px rgba(0,0,0,.8), 0 0 0 1px rgba(255,255,255,.1); background: #1b0f2e; }
+.phone:nth-child(1) { left: 2%; top: 12%; transform: rotate(-8deg); }
+.phone:nth-child(2) { left: 26%; top: 0; z-index: 2; width: 50%; }
+.phone:nth-child(3) { right: 0; top: 14%; transform: rotate(8deg); }
+
+/* by the numbers */
+.nums { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.panel { border-radius: var(--r); padding: 32px; display: flex; flex-direction: column; gap: 24px; min-height: 420px; }
+.panel .ptop { display: flex; justify-content: space-between; align-items: center; }
+.panel .plat { display: flex; align-items: center; gap: 12px; font-weight: 600; font-size: 16px; }
+.panel .plat .blogo { width: 44px; height: 44px; border-radius: 14px; font-size: 22px; }
+.panel .big { font-size: clamp(72px, 7.6vw, 116px); }
+.panel.glass .big { color: var(--y); }
+.panel .big + span { display: block; font-size: 16px; margin-top: 10px; }
+.panel.glass .big + span { color: var(--muted); }
+.panel .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: auto; }
+.panel .grid3 div { border-radius: 12px; padding: 16px; }
+.panel.glass .grid3 div { background: rgba(255,255,255,.05); border: 1px solid var(--stroke); }
+.panel.duo .grid3 div { background: rgba(255,255,255,.4); }
+.panel .grid3 .num { display: block; font-size: 24px; }
+.panel .grid3 span { display: block; margin-top: 6px; font-size: 13px; opacity: .7; }
+
+/* now playing */
+.np { display: grid; grid-template-columns: 2fr 1fr; gap: 16px; }
+.feature { aspect-ratio: 16 / 9; display: block; }
+.feature .meta, .vcard .meta { position: absolute; z-index: 2; left: 24px; right: 24px; bottom: 22px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; }
+.feature h4 { font-size: clamp(22px, 2.4vw, 34px); line-height: 1.12; font-weight: 800; letter-spacing: -.025em; max-width: 620px; }
+.feature .circle { width: 64px; height: 64px; font-size: 22px; }
+.np .side { display: grid; gap: 16px; grid-template-rows: 1fr 1fr; }
+.vcard { display: block; min-height: 220px; }
+.vcard h5 { font-size: 18px; line-height: 1.2; font-weight: 800; letter-spacing: -.02em; }
+.vcard .circle { width: 40px; height: 40px; font-size: 15px; }
+.strip { display: grid; grid-auto-flow: column; grid-auto-columns: minmax(300px, 1fr); gap: 16px; margin-top: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding-bottom: 6px; scrollbar-width: none; }
+.strip::-webkit-scrollbar { display: none; }
+.strip a { scroll-snap-align: start; }
+.strip .thumb { aspect-ratio: 16 / 9; border-radius: var(--r-sm); }
+.strip .t { font-weight: 600; font-size: 15px; margin-top: 12px; line-height: 1.35; }
+.strip .c { color: var(--muted); font-size: 13px; margin-top: 4px; }
+
+/* network */
+.yt { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.prof { display: block; aspect-ratio: 4 / 5; }
+.prof .tagrow { right: 18px; justify-content: space-between; align-items: center; }
+.prof .badge { width: 40px; height: 40px; border-radius: 12px; background: #ff0000; color: #fff; display: grid; place-items: center; font-size: 20px; }
+.prof .info { position: absolute; z-index: 2; left: 22px; right: 22px; bottom: 22px; }
+.prof h4 { font-size: 30px; line-height: 1.05; font-weight: 800; letter-spacing: -.03em; }
+.prof .handle { color: rgba(255,255,255,.72); font-size: 14px; display: flex; align-items: center; gap: 8px; margin-top: 8px; }
+.prof .handle .av { width: 22px; height: 22px; border-radius: 50%; overflow: hidden; flex: none; }
+.prof .foot { display: flex; align-items: flex-end; justify-content: space-between; margin-top: 16px; gap: 12px; }
+.prof .count .num { display: block; font-size: 36px; color: var(--y); }
+.prof .count span { font-size: 13px; color: rgba(255,255,255,.72); }
+.ntotals { display: grid; grid-template-columns: repeat(4, 1fr); margin-top: 16px; border-radius: var(--r); }
+.ntotals div { padding: 24px 26px; }
+.ntotals div + div { border-left: 1px solid rgba(10,10,10,.12); }
+.ntotals .num { display: block; font-size: clamp(28px, 3vw, 40px); }
+.ntotals span { display: block; margin-top: 6px; font-size: 13px; font-weight: 600; opacity: .7; }
+.chips { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
+.chip { display: flex; align-items: center; gap: 14px; padding: 14px; border-radius: 14px; transition: border-color .2s ease, transform .2s ease; min-width: 0; }
+.chip:hover { border-color: rgba(255,198,0,.5); transform: translateY(-2px); }
+.chip .av { width: 52px; height: 52px; border-radius: 50%; overflow: hidden; flex: none; background: #000; display: grid; place-items: center; color: var(--y); font-size: 22px; }
+.chip .av > * { grid-area: 1 / 1; }
+.chip .blogo { width: 52px; height: 52px; border-radius: 12px; font-size: 24px; }
+.chip .tx { min-width: 0; }
+.cgroup { grid-column: 1 / -1; display: flex; align-items: baseline; gap: 12px; padding: 14px 4px 2px; border-top: 1px solid var(--stroke); }
+.cgroup:first-child { border-top: 0; padding-top: 0; }
+.cgroup b { font-size: 15px; font-weight: 600; }
+.cgroup span { font-size: 13px; color: var(--muted); }
+.chip.ext { border-style: dashed; }
+.chip b { display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chip b svg { color: var(--y); font-size: 14px; }
+.chip .h { color: var(--muted); font-size: 12px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.chip .s { font-size: 13px; color: var(--muted); }
+.chip .s strong { color: var(--y); font-weight: 800; }
+
+/* brands */
+.brands { display: grid; grid-template-columns: repeat(6, 1fr); gap: 12px; }
+.brand { height: 120px; border-radius: 14px; display: grid; place-items: center; padding: 22px; transition: transform .25s ease, border-color .25s ease; }
+.brand:hover { transform: translateY(-2px); border-color: rgba(255,255,255,.22); }
+.brand img { width: auto; height: auto; object-fit: contain; }
+.brand.wide img { max-width: 74%; max-height: 32px; }
+.brand.tall img { max-width: 58%; max-height: 64px; }
+.brand.mono img { filter: brightness(0) invert(1); opacity: .88; }
+.brand .word { font-size: 20px; font-weight: 800; letter-spacing: -.02em; text-transform: uppercase; display: flex; align-items: center; gap: 10px; white-space: nowrap; color: rgba(255,255,255,.9); }
+.brand .word svg { width: 28px; height: 28px; color: #fff; }
+.more { text-align: center; margin-top: 24px; color: var(--muted); font-size: 16px; }
+.more b { color: var(--text); font-weight: 600; }
+
+/* collab */
+.collab { border-radius: 24px; padding: 48px; display: grid; grid-template-columns: 1.2fr 1fr; gap: 40px; align-items: stretch; }
+.collab .label { color: #0a0a0a; }
+.collab p { font-size: 17px; margin-top: 18px; max-width: 500px; }
+.collab ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin-top: 24px; }
+.collab li { border: 1px solid rgba(10,10,10,.5); border-radius: 999px; padding: 7px 14px; font-weight: 600; font-size: 13px; background: rgba(255,255,255,.3); }
+.collab .box { background: rgba(10,10,10,.9); color: var(--text); border-radius: 16px; padding: 30px; display: flex; flex-direction: column; justify-content: space-between; gap: 28px; }
+.collab .box .q { font-size: 26px; line-height: 1.25; font-weight: 300; letter-spacing: -.02em; }
+.collab .box .q b { font-weight: 800; color: var(--y); }
+.collab .box .contact { display: grid; gap: 10px; }
+.collab .box .pill { justify-content: space-between; padding: 16px 20px; font-size: 16px; }
+.collab .box .pill span { display: flex; align-items: center; gap: 10px; }
+.collab .box .pill .si, .collab .box .pill svg { font-size: 18px; }
+
+/* footer */
+footer { margin: 96px 0 28px; }
+.fwrap { border-radius: var(--r); padding: 28px; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; }
+.fwrap .logo { font-size: 18px; }
+.fwrap nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; color: var(--muted); }
+.fwrap nav a:hover { color: var(--text); }
+.fbar { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; color: var(--muted); font-size: 13px; margin-top: 16px; padding: 0 6px; }
+.fbar a:hover { color: var(--y); }
+
+/* ---------- clean pass: more air, fewer boxes, hairlines instead of cards ---------- */
+.wrap { width: min(1160px, 100% - 48px); }
+section { margin-top: 112px; }
+.head { margin-bottom: 36px; }
+.head p { font-weight: 300; }
+.h2 { font-size: clamp(34px, 4vw, 54px); }
+.subhead { margin: 52px 0 8px; }
+body::after { opacity: .035; }
+.ambient img { opacity: .16; }
+
+.hero { gap: 20px; margin-top: 20px; }
+/* same composition as phone: photo on top dissolving into dark, name and text underneath */
+.banner { padding: 40px; min-height: 820px; }
+.banner > img { height: 50%; -webkit-mask-image: linear-gradient(180deg, #000 55%, transparent 100%); mask-image: linear-gradient(180deg, #000 55%, transparent 100%); }
+.banner::after { background: linear-gradient(180deg, rgba(10,10,10,.4) 0, rgba(10,10,10,0) 22%); }
+.banner .tags .pill:nth-child(2) { background: none; border: 0; backdrop-filter: none; -webkit-backdrop-filter: none; color: rgba(255,255,255,.7); padding-left: 4px; }
+.handles { gap: 18px; margin-top: 32px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.12); }
+.handles a { background: none; border: 0; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 0; }
+.feed { padding: 22px; gap: 18px; }
+
+.about { margin-top: 56px; padding: 32px 4px; background: none; border: 0; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; border-radius: 0; border-top: 1px solid var(--stroke); }
+.about .ring { width: 64px; height: 64px; }
+
+.totals { margin-top: 0; gap: 0; border-top: 1px solid var(--stroke); border-bottom: 1px solid var(--stroke); }
+.total, .total.duo { background: none; border: 0; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; border-radius: 0; padding: 40px 32px; color: var(--text); }
+.total + .total { border-left: 1px solid var(--stroke); }
+.total .duo-bg { display: none; }
+.total.duo span:not(.num) { color: var(--muted); font-weight: 400; }
+.total.duo .num { color: var(--y); font-weight: 800; }
+
+.ig { gap: 20px; }
+.igcard { padding: 36px; }
+.reels { gap: 16px; }
+
+.moc { padding: 56px; gap: 56px; }
+.mstats { margin-top: 32px; }
+
+.nums { gap: 20px; }
+.panel { padding: 40px; min-height: 0; gap: 20px; }
+.panel .grid3 { gap: 0 24px; margin-top: auto; padding-top: 8px; }
+.panel .grid3 div, .panel.glass .grid3 div, .panel.duo .grid3 div { background: none; border: 0; border-radius: 0; padding: 18px 0 0; border-top: 1px solid var(--stroke); }
+.panel.duo .grid3 div { border-top-color: rgba(10,10,10,.2); }
+
+.np, .np .side { gap: 20px; }
+.strip { gap: 20px; margin-top: 28px; }
+
+.yt { gap: 20px; }
+.ntotals { margin-top: 20px; }
+.chips { grid-template-columns: repeat(3, 1fr); gap: 0 40px; }
+.chip, .chip.glass { background: none; border: 0; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; border-radius: 0; padding: 18px 0; border-bottom: 1px solid var(--stroke); }
+.chip:hover { transform: none; border-bottom-color: rgba(255,198,0,.5); }
+.chip.ext { border-style: solid; }
+.chip.ext .h::before { content: "Extension · "; color: var(--y); opacity: .8; }
+.cgroup { padding: 36px 0 6px; border-top: 0; }
+.cgroup:first-child { padding-top: 8px; }
+
+.brands { gap: 0; border-top: 1px solid var(--stroke); border-left: 1px solid var(--stroke); }
+.brand, .brand.glass { background: none; border: 0; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; border-radius: 0; height: 140px; border-right: 1px solid var(--stroke); border-bottom: 1px solid var(--stroke); }
+.brand:hover { transform: none; background: rgba(255,255,255,.03); }
+.more { margin-top: 32px; }
+
+.collab { padding: 56px; gap: 56px; }
+footer { margin-top: 112px; }
+
+@media (max-width: 1100px) {
+  .chips { grid-template-columns: repeat(2, 1fr); }
+  .brands { grid-template-columns: repeat(4, 1fr); }
+  .moc { grid-template-columns: minmax(0, 1fr); }
+  .phones { min-height: 520px; max-width: 560px; width: 100%; margin: 0 auto; }
+}
+@media (max-width: 1000px) {
+  .hero, .np, .collab, .ig, .nums { grid-template-columns: 1fr; }
+  .banner { min-height: 640px; }
+  .feed .reelrow a { min-height: 0; aspect-ratio: 9 / 16; }
+  .totals, .ntotals { grid-template-columns: repeat(2, 1fr); }
+  .ntotals div:nth-child(3) { border-left: 0; }
+  .ntotals div:nth-child(n+3) { border-top: 1px solid rgba(10,10,10,.12); }
+  .yt { grid-template-columns: 1fr 1fr; }
+  .nav ul { display: none; }
+  .about .who { display: none; }
+}
+@media (max-width: 640px) {
+  :root { --r: 16px; }
+  .banner { padding: 22px; min-height: 0; background: transparent; }
+  .banner > img { height: 440px; -webkit-mask-image: linear-gradient(180deg, #000 50%, transparent 100%); mask-image: linear-gradient(180deg, #000 50%, transparent 100%); }
+  .banner::after { background: linear-gradient(180deg, rgba(10,10,10,.35) 0, rgba(10,10,10,0) 30%); }
+  .banner h1 { margin-top: 270px; }
+  .feed { padding: 14px; }
+  .handles { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .about { flex-direction: column; text-align: center; padding: 24px; gap: 14px; }
+  .total { padding: 20px; }
+  .yt, .chips { grid-template-columns: 1fr; }
+  .brands { grid-template-columns: repeat(2, 1fr); }
+  .brand { height: 96px; }
+  .np .side { grid-template-rows: none; }
+  .feature { aspect-ratio: 4 / 5; }
+  .feature .circle { width: 52px; height: 52px; }
+  .reels { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: 62%; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+  .reels::-webkit-scrollbar { display: none; }
+  .reel { scroll-snap-align: start; }
+  .panel { padding: 24px; min-height: 0; }
+  .panel .grid3 .num { font-size: 19px; }
+  .igcard { padding: 24px; }
+  .moc { padding: 26px; border-radius: 18px; }
+  .mstats { grid-template-columns: 1fr 1fr; }
+  .mfeat { grid-template-columns: 1fr; }
+  .phones { min-height: 400px; }
+  .phone { border-width: 4px; border-radius: 22px; }
+  .collab { padding: 26px; border-radius: 18px; }
+  section { margin-top: 88px; }
+  .nav .pill { padding: 9px 14px; }
+  .logo span.n { display: none; }
+}
+@media (max-width: 1000px) {
+  .total:nth-child(3) { border-left: 0; }
+  .total:nth-child(n+3) { border-top: 1px solid var(--stroke); }
+  .moc, .collab, .panel { padding: 32px; }
+  .banner { min-height: 780px; }
+  .banner > img { height: 56%; }
+}
+@media (max-width: 640px) {
+  .wrap { width: calc(100% - 32px); }
+  .banner { min-height: 0; }
+  .banner > img { height: 440px; }
+  section { margin-top: 80px; }
+  .head { margin-bottom: 24px; }
+  .banner { padding: 22px; }
+  .handles { gap: 14px; }
+  .about { margin-top: 32px; padding: 28px 0; }
+  .total, .total.duo { padding: 26px 16px; }
+  .moc, .collab, .panel, .igcard { padding: 24px; }
+  .brand, .brand.glass { height: 100px; }
+  footer { margin-top: 80px; }
+  .cgroup { flex-direction: column; gap: 2px; }
+}
+</style>
+</head>
+<body>
+<div class="ambient" data-ambient></div>
+
+<div class="wrap">
+  <nav class="nav">
+    <div class="bar glass">
+      <a href="#top" class="logo"><span class="av" data-nav-av></span><span class="n"><b>PJ</b> Explained</span></a>
+      <ul>
+        <li><a href="#instagram">Instagram</a></li>
+        <li><a href="#moctale">Moctale</a></li>
+        <li><a href="#numbers">Numbers</a></li>
+        <li><a href="#latest">Latest</a></li>
+        <li><a href="#network">Network</a></li>
+        <li><a href="#brands">Brands</a></li>
+        <li><a href="links/">Links</a></li>
+      </ul>
+      <a href="#collab" class="pill pill-y pill-img" data-work-btn>Work with me</a>
+    </div>
+  </nav>
+
+  <header class="hero" id="top">
+    <div class="media banner">
+      <img data-photo alt="PJ Explained">
+      <div class="tags">
+        <span class="pill pill-glass pill-sm"><span class="live"></span><span data-updated></span></span>
+        <span class="pill pill-glass pill-sm">Film and pop-culture creator · since 2017</span>
+      </div>
+      <h1>PJ <span>Explained</span></h1>
+      <p class="lead" data-tagline></p>
+      <div class="ctas">
+        <a class="pill pill-lg pill-y" data-yt-link target="_blank" rel="noopener"><span data-yt-icon></span>Subscribe on YouTube</a>
+        <a class="pill pill-lg pill-glass" data-ig-link target="_blank" rel="noopener"><span data-ig-icon></span>Follow on Instagram</a>
+      </div>
+      <div class="handles" data-handles></div>
+    </div>
+
+    <aside class="feed glass">
+      <div class="fh"><span class="t"><span class="live"></span>Live on the channels</span><span class="u" data-updated-2></span></div>
+      <div data-feed-video></div>
+      <div class="sub"><b>Latest reels</b><span>New every day</span></div>
+      <div class="reelrow" data-feed-reels></div>
+      <div class="counts glass" data-feed-counts></div>
+    </aside>
+  </header>
+
+  <div class="about glass reveal" id="about">
+    <span class="ring" data-about-av></span>
+    <div class="txt">
+      <div class="label">About</div>
+      <h2>Pop-Culture Enthusiast <span class="soft">&amp; Building</span> <a href="#moctale">Moctale.in</a>!</h2>
+    </div>
+    <div class="who"><b data-real></b>Hyderabad · since 2017</div>
+  </div>
+
+  <div class="totals reveal" data-totals></div>
+
+  <section id="instagram" class="reveal">
+    <div class="head">
+      <div><div class="label">On Instagram</div><h2 class="h2">Reels that <span class="accent">travel</span></h2></div>
+      <p>New reels every day — trailer reactions, hot takes and the moments everyone shares.</p>
+    </div>
+    <div class="ig">
+      <div class="igcard duo" data-igcard></div>
+      <div class="reels" data-reels></div>
+    </div>
+  </section>
+
+  <section id="moctale" class="reveal">
+    <div class="moc glass">
+      <div>
+        <div class="label">What we're building</div>
+        <img class="mlogo" data-moc-logo alt="Moctale">
+        <h2 class="h2">Now on <span class="accent">iOS and Android</span></h2>
+        <p data-moc-blurb></p>
+        <div class="mfeat" data-mfeat></div>
+        <div class="stores" data-stores></div>
+        <div class="mstats" data-mstats></div>
+        <div class="mpills" data-mpills></div>
+      </div>
+      <div class="phones" data-phones></div>
+    </div>
+  </section>
+
+  <section id="numbers" class="reveal">
+    <div class="head">
+      <div><div class="label">By the numbers</div><h2 class="h2">Reach that <span class="accent">shows up</span></h2></div>
+      <p>The audience behind PJ Explained on YouTube and Instagram.</p>
+    </div>
+    <div class="nums" data-nums></div>
+  </section>
+
+  <section id="latest" class="reveal">
+    <div class="head">
+      <div><div class="label">Now playing</div><h2 class="h2">Fresh off the <span class="accent">timeline</span></h2></div>
+      <p>The newest videos from PJ Explained, thePJ and the Men of Culture podcast.</p>
+    </div>
+    <div class="np" data-np></div>
+    <div class="strip" data-strip></div>
+  </section>
+
+  <section id="network" class="reveal">
+    <div class="head">
+      <div><div class="label">The PJ Explained network</div><h2 class="h2">One creator, <span class="accent">every screen</span></h2></div>
+      <p>Seven YouTube channels, the Men of Culture podcast and a community on every platform.</p>
+    </div>
+    <div class="yt" data-yt></div>
+    <div class="ntotals duo" data-ntotals></div>
+
+    <div class="subhead"><h3>YouTube channels</h3><span data-yt-count></span></div>
+    <div class="chips" data-chips></div>
+
+    <div class="subhead"><h3>Follow everywhere</h3><span>Socials and community</span></div>
+    <div class="chips" data-socials></div>
+  </section>
+
+  <section id="brands" class="reveal">
+    <div class="head">
+      <div><div class="label">Trusted by</div><h2 class="h2">Brands I've <span class="accent">worked with</span></h2></div>
+      <p>Studios, streamers and brands that have partnered with PJ Explained.</p>
+    </div>
+    <div class="brands" data-brands></div>
+    <p class="more">…and <b>many more</b>.</p>
+  </section>
+
+  <section id="collab" class="reveal">
+    <div class="collab duo" data-collab-card>
+      <div>
+        <div class="label">Work with me</div>
+        <h2 class="h2">Let's make something people talk about</h2>
+        <p>Studios, streamers and brands partner with PJ Explained to reach millions of movie lovers on YouTube and Instagram.</p>
+        <ul data-collab></ul>
+      </div>
+      <div class="box">
+        <p class="q">Got a film, a show or a brand story? <b>Let's talk.</b></p>
+        <div class="contact" data-contact></div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="fwrap glass">
+      <a href="#top" class="logo"><span class="av" data-foot-av></span><span><b>PJ</b> Explained</span></a>
+      <nav><a href="#instagram">Instagram</a><a href="#moctale">Moctale</a><a href="#network">Network</a><a href="#brands">Brands</a><a href="#collab">Work with me</a><a href="links/">Links</a></nav>
+    </div>
+    <div class="fbar">
+      <span>© <span data-year></span> PJ Explained · <span data-real></span></span>
+      <a data-mail></a>
+    </div>
+  </footer>
+</div>
+
+<script>
+const $ = s => document.querySelector(s);
+const $$ = s => document.querySelectorAll(s);
+const YT = PJ.youtube, IG = PJ.instagram, M = PJ.moctale;
+const own = PJ.channels.filter(c => c.featured);
+const social = n => PJ.socials.find(s => s.logo === n);
+const img = (src, alt, extra = "") => `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" ${extra}>`;
+const vthumb = v => img(thumb(v.id), v.title, `onerror="${thumbFallback}"`);
+const blank = `target="_blank" rel="noopener"`;
+const tile = (s, cls = "blogo") => `<span class="${cls}" style="background:${s.bg};color:${s.fg || "#fff"}">${logoMask(s.logo)}</span>`;
+const ytTile = { logo: "youtube", bg: "#ff0000" };
+const duo = (el, src) => el.insertAdjacentHTML("afterbegin", `<span class="duo-bg">${img(src, "")}</span>`);
+const num = v => `<span class="num">${esc(v)}</span>`;
+
+// ambient light, avatars, names
+$("[data-ambient]").innerHTML = img(PJ.photo, "") + img(PJ.reels[2].img, "");
+["[data-nav-av]", "[data-about-av]", "[data-foot-av]"].forEach(s => $(s).innerHTML = img(IG.avatar, "PJ"));
+$$("[data-real]").forEach(el => el.textContent = PJ.realName);
+$("[data-year]").textContent = new Date().getFullYear();
+$("[data-mail]").textContent = PJ.email;
+$("[data-mail]").href = "mailto:" + PJ.email;
+$("[data-work-btn]").style.setProperty("--img", `url("${thumb(PJ.channels[1].cover)}")`);
+
+// hero
+$("[data-tagline]").textContent = PJ.tagline;
+$("[data-photo]").src = PJ.photo;
+$("[data-photo]").style.objectPosition = PJ.photoPos || "50% 50%";
+$("[data-updated]").textContent = updatedLabel();
+$("[data-updated-2]").textContent = updatedLabel();
+$("[data-yt-link]").href = YT.url;
+$("[data-ig-link]").href = IG.url;
+$("[data-yt-icon]").outerHTML = logoMask("youtube");
+$("[data-ig-icon]").outerHTML = logoMask("instagram");
+$("[data-handles]").innerHTML = [
+  { ...ytTile, n: YT.subs, l: "YouTube", url: YT.url },
+  ...["instagram", "facebook", "threads", "x"].map(k => { const s = social(k); return { ...s, n: s.count, l: s.name }; })
+].map(h => `<a class="glass" href="${esc(h.url)}" ${blank}>${tile(h)}<span>${num(h.n)}<span class="l">${esc(h.l)}</span></span></a>`).join("");
+
+// live feed
+const lv = PJ.latest[0];
+$("[data-feed-video]").innerHTML = `
+  <a class="media shade vid" href="${watch(lv.id)}" ${blank}>${vthumb(lv)}
+    <div class="tagrow"><span class="pill pill-glass pill-sm">${esc(lv.channel)}</span><span class="pill pill-glass pill-sm">${esc(ago(lv.date))}</span></div>
+    <div class="meta"><div><h4>${esc(lv.title)}</h4><div class="v">${ICON.eye} ${esc(lv.views)} views</div></div><span class="circle">${ICON.play}</span></div>
+  </a>`;
+$("[data-feed-reels]").innerHTML = PJ.reels.slice(0, 3).map(r => `
+  <a href="${esc(r.url)}" ${blank}>${img(r.img, "Instagram reel")}<span class="i blogo ig-grad">${logoMask("instagram")}</span><span class="d pill pill-glass pill-sm">${esc(ago(r.date))}</span></a>`).join("");
+$("[data-feed-counts]").innerHTML = `
+  <div><span class="num">${logoMask("youtube")}${esc(YT.subs)}</span><span>YouTube</span></div>
+  <div><span class="num">${logoMask("instagram")}${esc(IG.followers)}</span><span>Instagram</span></div>
+  <div><span class="num">${esc(PJ.totals[2].value)}</span><span>all platforms</span></div>`;
+
+// totals
+$("[data-totals]").innerHTML = PJ.totals.map((t, i) => `<div class="total ${i < 2 ? "duo" : "glass"}">${num(t.value)}<span>${esc(t.label)}</span></div>`).join("");
+const duoTotals = $$(".total.duo");
+duo(duoTotals[0], thumb(PJ.latest[3].id));
+duo(duoTotals[1], PJ.reels[0].img);
+
+// instagram
+const igRows = [["Posts", IG.posts], ["New reels", IG.rhythm], ["Avg. reel views", IG.avgViews], ["Engagement", IG.engagement]].filter(r => r[1]);
+$("[data-igcard]").innerHTML = `
+  <div class="who"><span class="ring">${img(IG.avatar, IG.name)}</span><div><b>${esc(IG.handle)} <span class="tick" style="color:#0a0a0a">${ICON.check}</span></b><span>${esc(IG.name)} on Instagram</span></div></div>
+  <div><span class="num big">${esc(IG.followers)}</span><span>followers</span></div>
+  <p class="lead">Trailer drops, hot takes and reactions, posted the same day it happens.</p>
+  <div class="rows">${igRows.map(r => `<div><span>${r[0]}</span><b>${esc(r[1])}</b></div>`).join("")}</div>
+  <a class="pill pill-lg pill-k" href="${esc(IG.url)}" ${blank}>${logoMask("instagram")} Follow ${esc(IG.handle)}</a>`;
+duo($("[data-igcard]"), PJ.reels[4].img);
+$("[data-reels]").innerHTML = PJ.reels.slice(0, 8).map(r => `
+  <a class="media shade reel" href="${esc(r.url)}" ${blank}>${img(r.img, "Instagram reel")}
+    <span class="ic blogo ig-grad">${logoMask("instagram")}</span><span class="d pill pill-glass pill-sm">${esc(ago(r.date))}</span></a>`).join("");
+
+// moctale
+$("[data-moc-logo]").src = M.logo;
+$("[data-moc-blurb]").textContent = M.blurb;
+$("[data-mfeat]").innerHTML = M.features.map(x => `<div><b>${esc(x.title)}</b><span>${esc(x.text)}</span></div>`).join("");
+$("[data-stores]").innerHTML = `
+  <a class="store" href="${esc(M.ios)}" ${blank}>${logoMask("apple")}<span><small>Download on the</small><b>App Store</b></span></a>
+  <a class="store" href="${esc(M.android)}" ${blank}>${logoMask("googleplay")}<span><small>Get it on</small><b>Google Play</b></span></a>`;
+$("[data-mstats]").innerHTML = M.stats.map(s => `<div class="mstat glass">${num(s.value)}<span>${esc(s.label)}</span></div>`).join("");
+$("[data-mpills]").innerHTML = M.links.map(l => `<a class="glass" href="${esc(l.url)}" ${blank}>${l.logo ? logoMask(l.logo) : img(M.icon, "")}${esc(l.name)}</a>`).join("");
+$("[data-phones]").innerHTML = M.screens.map(s => `<div class="phone">${img(s, "Moctale app screen")}</div>`).join("");
+
+// by the numbers
+const igGrid = [[IG.posts, "posts"], [IG.avgViews || IG.rhythm, IG.avgViews ? "avg. reel views" : "new reels"], [IG.engagement || "Verified", IG.engagement ? "engagement" : "account"]];
+$("[data-nums]").innerHTML = `
+  <div class="panel glass">
+    <div class="ptop"><span class="plat">${tile(ytTile)}YouTube · ${esc(YT.handle)}</span><a class="circle spin" href="${esc(YT.url)}" ${blank}>${ICON.arrow}</a></div>
+    <div><span class="num big">${esc(YT.subs)}</span><span>subscribers on the main channel</span></div>
+    <div class="grid3"><div>${num(YT.views)}<span>views</span></div><div>${num(YT.videos)}<span>videos</span></div><div>${num(YT.since)}<span>on air since</span></div></div>
+  </div>
+  <div class="panel duo" data-igpanel>
+    <div class="ptop"><span class="plat">${tile(social("instagram"))}Instagram · ${esc(IG.handle)}</span><a class="circle spin" style="background:#0a0a0a;color:var(--y)" href="${esc(IG.url)}" ${blank}>${ICON.arrow}</a></div>
+    <div><span class="num big">${esc(IG.followers)}</span><span>followers and growing every day</span></div>
+    <div class="grid3">${igGrid.map(g => `<div>${num(g[0])}<span>${esc(g[1])}</span></div>`).join("")}</div>
+  </div>`;
+duo($("[data-igpanel]"), PJ.reels[1].img);
+
+// now playing
+const [f, s1, s2, ...rest] = PJ.latest;
+const tagrow = v => `<div class="tagrow"><span class="pill pill-glass pill-sm">${esc(v.channel)}</span><span class="pill pill-glass pill-sm">${esc(ago(v.date))}</span></div>`;
+const side = v => `<a class="media shade vcard" href="${watch(v.id)}" ${blank}>${vthumb(v)}${tagrow(v)}<div class="meta"><h5>${esc(v.title)}</h5><span class="circle">${ICON.play}</span></div></a>`;
+$("[data-np]").innerHTML = `
+  <a class="media shade feature" href="${watch(f.id)}" ${blank}>${vthumb(f)}${tagrow(f)}
+    <div class="meta"><h4>${esc(f.title)}</h4><span class="circle">${ICON.play}</span></div></a>
+  <div class="side">${side(s1)}${side(s2)}</div>`;
+$("[data-strip]").innerHTML = rest.map(v => `<a href="${watch(v.id)}" ${blank}><div class="media thumb">${vthumb(v)}</div><div class="t">${esc(v.title)}</div><div class="c">${esc(v.channel)} · ${esc(v.views)} views · ${esc(ago(v.date))}</div></a>`).join("");
+
+// network
+$("[data-yt]").innerHTML = own.map(c => `
+  <a class="media shade prof" href="${esc(c.url)}" ${blank}>${img(thumb(c.cover), c.name, `style="object-position:${esc(c.coverPos || "50% 50%")}" onerror="${thumbFallback}"`)}
+    <div class="tagrow"><span class="pill pill-glass pill-sm">${esc(c.tag)}</span><span class="badge">${logoMask("youtube")}</span></div>
+    <div class="info">
+      <h4>${esc(c.name)}</h4><div class="handle"><span class="av">${img(c.avatar, "")}</span>${esc(c.handle)}</div>
+      <div class="foot"><div class="count">${num(c.subs)}<span>subscribers</span></div><span class="pill pill-y">Subscribe</span></div>
+    </div></a>`).join("");
+$("[data-ntotals]").innerHTML = PJ.networkTotals.map(t => `<div>${num(t.value)}<span>${esc(t.label)}</span></div>`).join("");
+duo($("[data-ntotals]"), thumb(PJ.latest[1].id));
+$("[data-yt-count]").textContent = `${PJ.channels.length} channels`;
+const chip = c => `
+  <a class="chip glass${c.ext ? " ext" : ""}" href="${esc(c.url)}" ${blank}>
+    <span class="av">${ICON[c.icon]}${img(c.avatar, c.name, `onerror="this.remove()"`)}</span>
+    <span class="tx"><b>${esc(c.name)}${c.verified ? ICON.check : ""}</b><div class="h">${esc(c.tag)} · ${esc(c.handle)}</div><div class="s"><strong>${esc(c.subs)}</strong> subscribers · ${esc(c.videos)} videos</div></span>
+  </a>`;
+$("[data-chips]").innerHTML = PJ.channelGroups.map(g => `
+  <div class="cgroup"><b>${esc(g.name)}</b><span>${esc(g.note)}</span></div>
+  ${PJ.channels.filter(c => c.group === g.id).map(chip).join("")}`).join("");
+$("[data-socials]").innerHTML = PJ.socials.map(s => `
+  <a class="chip glass" href="${esc(s.url)}" ${blank}>
+    ${tile(s)}
+    <span class="tx"><b>${esc(s.name)}</b><div class="h">${esc(s.handle)}</div><div class="s">${s.count ? `<strong>${esc(s.count)}</strong> ${esc(s.unit)}` : "Follow along"}</div></span>
+  </a>`).join("");
+
+// brands
+$("[data-brands]").innerHTML = PJ.brands.map(b => {
+  const inner = b.logo ? img(b.logo, b.name) : `<span class="word">${b.svg || ""}${esc(b.name)}</span>`;
+  return `<div class="brand glass ${b.size || ""} ${b.mono ? "mono" : ""}" title="${esc(b.name)}">${inner}</div>`;
+}).join("");
+
+// collab
+$("[data-collab]").innerHTML = PJ.collab.map(c => `<li>${esc(c)}</li>`).join("");
+duo($("[data-collab-card]"), thumb(PJ.channels[1].cover));
+$("[data-contact]").innerHTML = (PJ.email ? `<a class="pill pill-y pill-img" style="--img:url('${thumb(PJ.latest[0].id)}')" href="mailto:${esc(PJ.email)}"><span>${ICON.mail}${esc(PJ.email)}</span>${ICON.arrow}</a>` : "")
+  + `<a class="pill pill-glass" href="${esc(IG.url)}" ${blank}><span>${logoMask("instagram")}DM on Instagram</span>${ICON.arrow}</a>`;
+
+// soft dissolve-in as sections scroll into view
+const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } }), { threshold: .08 });
+$$(".reveal").forEach(el => io.observe(el));
+</script>
+</body>
+</html>

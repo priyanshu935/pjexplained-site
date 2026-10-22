@@ -1,0 +1,479 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>PJ Explained · Links</title>
+<meta name="description" content="Every PJ Explained channel, social and Moctale in one place.">
+<meta name="theme-color" content="#0a0a0a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta property="og:title" content="PJ Explained · Links">
+<meta property="og:url" content="https://pjexplained.com/links">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'><circle cx='32' cy='32' r='32' fill='%23ffc600'/><text x='32' y='42' font-family='Arial Black,Arial' font-weight='900' font-size='26' text-anchor='middle' fill='%230a0a0a'>PJ</text></svg>">
+<link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
+<link rel="stylesheet" href="../trueno.css">
+<script src="../data.js"></script>
+<script src="../data-live.js"></script>
+<style>
+/* Trueno only: 300 light · 400 regular · 600 semibold · 800 extrabold. Sentence case, no italics. */
+:root { --y: #ffc600; --bg: #0a0a0a; --muted: #a1a19b; --text: #f4f4f1; --m: #a57bff; --stroke: rgba(255,255,255,.11); --r: 12px; --r-sm: 8px; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body { background: var(--bg); color: var(--text); font-family: "Trueno", system-ui, sans-serif; font-size: 15px; line-height: 1.5; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+a { color: inherit; text-decoration: none; }
+img { display: block; width: 100%; height: 100%; object-fit: cover; }
+svg { width: 1em; height: 1em; flex: none; }
+
+.ambient { position: fixed; inset: -10%; z-index: -1; pointer-events: none; overflow: hidden; }
+.ambient img { position: absolute; width: 80%; height: 50%; filter: blur(80px) saturate(1.3); opacity: .22; animation: drift 28s ease-in-out infinite alternate; }
+.ambient img:nth-child(1) { top: 0; left: -10%; }
+.ambient img:nth-child(2) { bottom: 0; right: -10%; animation-delay: -14s; }
+.ambient::after { content: ""; position: absolute; inset: 0; background: radial-gradient(50% 30% at 80% 10%, rgba(255,198,0,.1), transparent 70%), rgba(10,10,10,.6); }
+@keyframes drift { to { transform: translate(6%, 4%) scale(1.1); } }
+body::after { content: ""; position: fixed; inset: -50%; z-index: 100; pointer-events: none; opacity: .05; mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='220' height='220'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 1.2 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation: grain 1.4s steps(5) infinite; }
+@keyframes grain { 0%{transform:translate(0,0)} 25%{transform:translate(-3%,2%)} 50%{transform:translate(2%,-3%)} 75%{transform:translate(3%,3%)} 100%{transform:translate(0,0)} }
+@media (prefers-reduced-motion: reduce) { .ambient img, body::after, .track { animation: none; } }
+
+.glass { position: relative; background: linear-gradient(180deg, rgba(255,255,255,.07), rgba(255,255,255,.025)); border: 1px solid var(--stroke); backdrop-filter: blur(22px) saturate(160%); -webkit-backdrop-filter: blur(22px) saturate(160%); box-shadow: inset 0 1px 0 rgba(255,255,255,.12), 0 20px 40px -28px rgba(0,0,0,.8); }
+.si { display: block; width: 1em; height: 1em; background: currentColor; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; flex: none; }
+.blogo { width: 40px; height: 40px; border-radius: 8px; display: grid; place-items: center; font-size: 20px; color: #fff; flex: none; }
+.ig-grad { background: linear-gradient(45deg,#feda75,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5); color: #fff; }
+.pill-img { position: relative; isolation: isolate; overflow: hidden; }
+.pill-img::before { content: ""; position: absolute; inset: 0; z-index: -1; background: var(--img) center / cover; filter: grayscale(1) contrast(1.2); mix-blend-mode: multiply; opacity: .35; -webkit-mask-image: linear-gradient(90deg, transparent 15%, #000 85%); mask-image: linear-gradient(90deg, transparent 15%, #000 85%); }
+.label { font-size: 11px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: var(--y); }
+.num { font-weight: 800; letter-spacing: -.03em; line-height: 1; }
+.circle { width: 40px; height: 40px; border-radius: 50%; background: var(--y); color: #0a0a0a; display: grid; place-items: center; font-size: 16px; flex: none; }
+.chev { color: var(--muted); font-size: 16px; flex: none; }
+
+main { width: 100%; max-width: 460px; margin: 0 auto; padding: max(12px, env(safe-area-inset-top)) 12px 32px; display: grid; grid-template-columns: minmax(0, 1fr); gap: 10px; }
+.sec { display: flex; justify-content: space-between; align-items: baseline; padding: 18px 4px 4px; }
+.sec h2 { font-size: 20px; font-weight: 800; letter-spacing: -.02em; }
+.sec span { color: var(--muted); font-size: 12px; }
+
+/* hero */
+.hero { position: relative; overflow: hidden; border-radius: 14px; height: min(66vh, 540px); min-height: 460px; border: 1px solid var(--stroke); }
+.hero > img { position: absolute; inset: 0; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,.25) 0%, rgba(0,0,0,0) 25%, rgba(0,0,0,0) 40%, rgba(0,0,0,.9) 100%); pointer-events: none; }
+.hero .over { position: absolute; z-index: 2; }
+.hero .top { top: 14px; left: 14px; right: 14px; display: flex; justify-content: space-between; align-items: center; }
+.hero .igp { display: flex; align-items: center; gap: 8px; padding: 5px 12px 5px 5px; border-radius: 999px; font-size: 13px; font-weight: 600; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.hero .igp img { width: 28px; height: 28px; border-radius: 50%; border: 2px solid var(--y); }
+.hero .info { left: 16px; right: 16px; bottom: 16px; }
+.hero h1 { font-size: 38px; line-height: 1; font-weight: 800; letter-spacing: -.035em; display: flex; align-items: center; gap: 8px; }
+.hero h1 .tick { color: var(--y); font-size: 22px; display: inline-grid; }
+.hero .tag { color: rgba(255,255,255,.78); font-size: 14px; margin-top: 6px; font-weight: 300; }
+.hero .reach { display: flex; gap: 14px; margin-top: 10px; font-size: 13px; color: rgba(255,255,255,.8); }
+.hero .reach b { color: var(--y); font-weight: 800; }
+.hero .stats { display: grid; grid-template-columns: 1fr 1fr auto; gap: 6px; margin-top: 14px; }
+.hero .stats a { display: flex; align-items: center; gap: 8px; padding: 7px 10px 7px 7px; border-radius: var(--r-sm); min-width: 0; }
+.hero .stats a.glass { background: rgba(255,255,255,.06); box-shadow: none; border-color: rgba(255,255,255,.1); }
+.hero .stats .blogo { width: 26px; height: 26px; border-radius: 6px; font-size: 14px; filter: saturate(.5) brightness(.92); opacity: .9; }
+.hero .stats .num { display: block; font-size: 14.5px; font-weight: 600; color: rgba(255,255,255,.92); }
+.hero .stats small { display: block; font-size: 10.5px; color: rgba(255,255,255,.6); }
+
+/* about + worked with */
+.about { border-radius: var(--r); padding: 14px 16px; }
+.about p { font-size: 18px; line-height: 1.25; font-weight: 800; letter-spacing: -.02em; margin-top: 4px; }
+.about p .soft { font-weight: 300; }
+.about p a { color: var(--y); }
+.trust { border-radius: var(--r); padding: 12px 0 14px; overflow: hidden; }
+.trust .label { padding: 0 16px; display: flex; justify-content: space-between; }
+.trust .label span { color: var(--muted); letter-spacing: .06em; }
+.marquee { margin-top: 12px; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); mask-image: linear-gradient(90deg, transparent, #000 10%, #000 90%, transparent); }
+.track { display: flex; align-items: center; gap: 28px; width: max-content; animation: slide 38s linear infinite; }
+@keyframes slide { to { transform: translateX(-50%); } }
+.track img { width: auto; height: 20px; object-fit: contain; }
+.track .tall { height: 30px; }
+.track .mono { filter: brightness(0) invert(1); opacity: .85; }
+.track .word { font-weight: 800; font-size: 14px; letter-spacing: -.01em; text-transform: uppercase; white-space: nowrap; color: rgba(255,255,255,.85); }
+
+/* channel rows */
+.ch { display: flex; align-items: center; gap: 12px; padding: 9px; border-radius: var(--r); }
+.ch .av { width: 54px; height: 54px; border-radius: var(--r-sm); overflow: hidden; flex: none; background: #000; display: grid; place-items: center; color: var(--y); font-size: 24px; }
+.ch .av > * { grid-area: 1 / 1; }
+.ch .txt { flex: 1; min-width: 0; }
+.ch b { display: flex; align-items: center; gap: 6px; font-size: 15px; font-weight: 600; }
+.ch b svg { color: var(--y); font-size: 13px; }
+.ch small { color: var(--muted); font-size: 12.5px; }
+.ch small strong { color: var(--y); font-weight: 800; }
+.ch .yt { width: 36px; height: 36px; border-radius: 7px; background: #ff0000; color: #fff; display: grid; place-items: center; font-size: 18px; flex: none; }
+.ch.main { background: var(--y); color: #0a0a0a; border-color: transparent; }
+.ch.main small { color: rgba(10,10,10,.65); }
+.ch.main small strong { color: #0a0a0a; }
+
+/* men of culture group */
+.group { border-radius: var(--r); padding: 6px; }
+.group .ch { border: 0; background: none; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.group .ext { margin-left: 28px; position: relative; padding: 7px 9px; }
+.group .ext::before { content: ""; position: absolute; left: -16px; top: -6px; bottom: 50%; width: 12px; border-left: 1.5px solid rgba(255,255,255,.2); border-bottom: 1.5px solid rgba(255,255,255,.2); border-bottom-left-radius: 8px; }
+.group .ext .av { width: 42px; height: 42px; border-radius: 50%; }
+.group .ext b { font-size: 14px; }
+.group .ext .tagx { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--stroke); border-radius: 999px; padding: 1px 7px; }
+
+/* instagram */
+.ig { border-radius: var(--r); padding: 14px; display: grid; gap: 12px; }
+.ig .who { display: flex; align-items: center; gap: 12px; }
+.ig .ring { width: 54px; height: 54px; border-radius: 50%; padding: 3px; flex: none; }
+.ig .ring img { border-radius: 50%; border: 2px solid #0a0a0a; }
+.ig .who .tx { flex: 1; min-width: 0; }
+.ig .who b { display: block; font-size: 16px; font-weight: 600; }
+.ig .who small { font-size: 12.5px; color: var(--muted); }
+.ig .n { font-size: 28px; text-align: right; color: var(--y); }
+.ig .n small { display: block; font-size: 11px; font-weight: 400; letter-spacing: 0; color: var(--muted); margin-top: 3px; }
+.ig .reels { display: grid; grid-auto-flow: column; grid-auto-columns: 31%; gap: 8px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.ig .reels::-webkit-scrollbar { display: none; }
+.ig .reel { aspect-ratio: 9 / 16; border-radius: var(--r-sm); overflow: hidden; position: relative; scroll-snap-align: start; background: #0a0a0a; }
+.ig .reel span { position: absolute; top: 7px; right: 7px; width: 24px; height: 24px; border-radius: 5px; font-size: 13px; }
+.ig .follow { display: flex; justify-content: space-between; align-items: center; gap: 10px; border-radius: 999px; padding: 7px 16px 7px 7px; font-weight: 600; font-size: 14px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); }
+.ig .follow > span { display: flex; align-items: center; gap: 10px; }
+.ig .follow .blogo { width: 30px; height: 30px; border-radius: 50%; font-size: 15px; }
+.ig .follow svg { color: var(--muted); }
+
+/* moctale */
+.moc { border-radius: var(--r); padding: 16px; display: grid; gap: 14px; overflow: hidden; }
+.moc::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(70% 55% at 100% 0%, rgba(150,90,255,.42), transparent 70%); }
+.moc > * { position: relative; }
+.moc .mtop { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 8px 12px; }
+.moc .mtop .label { white-space: nowrap; }
+.moc .mlogo { height: 26px; width: auto; }
+.moc .label { color: var(--m); }
+.moc h3 { font-size: 26px; line-height: 1.05; font-weight: 800; letter-spacing: -.03em; }
+.moc h3 span { color: var(--m); }
+.moc .what { font-size: 13.5px; color: #d4d1dd; }
+.feat { display: grid; gap: 8px; }
+.feat div { display: grid; grid-template-columns: 78px 1fr; gap: 10px; align-items: baseline; padding: 10px 0; border-top: 1px solid rgba(255,255,255,.1); }
+.feat b { font-size: 14px; font-weight: 800; color: #fff; }
+.feat span { font-size: 13px; color: #c4bfd2; line-height: 1.4; }
+.stores { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.store { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: var(--r-sm); background: #0a0a0a; border: 1px solid rgba(255,255,255,.22); }
+.store .si { font-size: 24px; }
+.store small { display: block; font-size: 10px; color: #b5b5b5; line-height: 1.1; }
+.store b { display: block; font-size: 16px; font-weight: 600; line-height: 1.2; }
+.mstats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.mstats div { border-radius: var(--r-sm); padding: 10px; }
+.mstats .num { display: block; font-size: 19px; }
+.mstats span { display: block; margin-top: 4px; font-size: 10.5px; color: #c4bfd2; line-height: 1.3; }
+.mlinks { display: flex; flex-wrap: wrap; gap: 6px; }
+.mlinks a { display: flex; align-items: center; gap: 6px; padding: 6px 11px 6px 8px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.mlinks .si { font-size: 14px; }
+
+/* latest */
+.slider { display: grid; grid-auto-flow: column; grid-auto-columns: 84%; gap: 10px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; margin: 0 -12px; padding: 0 12px; scroll-padding: 0 12px; }
+.slider::-webkit-scrollbar { display: none; }
+.slider .vid { scroll-snap-align: start; }
+.tpj .slider { margin: 0 -14px; padding: 0 14px; scroll-padding: 0 14px; grid-auto-columns: 80%; }
+.tpj .slider .vid { aspect-ratio: 16 / 9; }
+.tpj .slider .vid h3 { font-size: 15px; }
+.tpj { border-radius: var(--r); padding: 14px; display: grid; gap: 12px; overflow: hidden; }
+.tpj::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(70% 50% at 100% 0%, rgba(255,198,0,.16), transparent 70%); }
+.tpj > * { position: relative; }
+.tpj-head { display: flex; align-items: center; gap: 12px; }
+.tpj-head .av { width: 50px; height: 50px; border-radius: 50%; overflow: hidden; flex: none; border: 2px solid var(--y); }
+.tpj-head b { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; font-size: 17px; font-weight: 800; letter-spacing: -.02em; }
+.tpj-head small { color: var(--muted); font-size: 12.5px; }
+.tagx { font-size: 10px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); border: 1px solid var(--stroke); border-radius: 999px; padding: 1px 7px; }
+.tpj-blurb { font-size: 14px; font-weight: 300; color: #dcdcd6; }
+.tpj-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.tpj-stats div { padding: 10px; border-radius: var(--r-sm); background: rgba(255,255,255,.05); border: 1px solid var(--stroke); }
+.tpj-stats .num { display: block; font-size: 20px; color: var(--y); }
+.tpj-stats span:last-child { display: block; margin-top: 4px; font-size: 11px; color: var(--muted); line-height: 1.3; }
+.tpj-sub { display: flex; justify-content: space-between; align-items: center; padding: 7px 16px 7px 7px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid rgba(255,255,255,.12); color: var(--text); font-weight: 600; font-size: 14px; }
+.tpj-sub > span { display: flex; align-items: center; gap: 10px; }
+.tpj-sub .blogo { width: 30px; height: 30px; border-radius: 50%; font-size: 15px; background: #ff0000; }
+.tpj-sub svg { color: var(--muted); }
+.vid { position: relative; overflow: hidden; display: block; aspect-ratio: 16 / 10; border-radius: var(--r); }
+.vid::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.88) 100%); }
+.vid .over { position: absolute; z-index: 2; }
+.vid .top { top: 12px; left: 12px; display: flex; gap: 6px; }
+.vid .top span { padding: 5px 10px; border-radius: 999px; font-size: 12px; font-weight: 600; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.vid .info { left: 16px; right: 16px; bottom: 14px; display: flex; align-items: flex-end; justify-content: space-between; gap: 12px; }
+.vid h3 { font-size: 18px; line-height: 1.2; font-weight: 800; letter-spacing: -.02em; }
+
+/* socials */
+.grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+.soc { border-radius: var(--r); padding: 10px; display: flex; align-items: center; gap: 10px; min-width: 0; }
+.soc .tx { min-width: 0; }
+.soc b { display: block; font-size: 14px; font-weight: 600; }
+.soc small { color: var(--muted); font-size: 12px; display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.soc small strong { color: var(--y); font-weight: 800; }
+
+.collab { border-radius: var(--r); padding: 20px; background: var(--y); color: #0a0a0a; box-shadow: 0 0 0 1px rgba(255,198,0,.6), 0 18px 50px -12px rgba(255,198,0,.35); }
+.collab::before { opacity: .45; }
+.collab .label { color: #0a0a0a; display: flex; align-items: center; gap: 8px; }
+.collab .label::before { content: ""; width: 7px; height: 7px; border-radius: 50%; background: #0a0a0a; box-shadow: 0 0 0 4px rgba(10,10,10,.15); }
+.collab b { display: block; font-size: 24px; font-weight: 800; letter-spacing: -.025em; line-height: 1.1; margin-top: 8px; }
+.collab .sub { font-size: 14px; margin-top: 8px; max-width: 360px; }
+.collab .sub strong { font-weight: 800; }
+.cbtns { display: grid; gap: 8px; margin-top: 16px; }
+.cbtns a { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 13px 16px; border-radius: 999px; font-size: 14px; font-weight: 600; }
+.cbtns a span { display: flex; align-items: center; gap: 9px; min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+.cbtns a .si, .cbtns a svg { font-size: 17px; }
+.cbtns .primary { background: #0a0a0a; color: var(--y); }
+.cbtns .secondary { border: 1px solid rgba(10,10,10,.5); background: rgba(255,255,255,.3); }
+#work { scroll-margin-top: 12px; }
+.hero .workbtn { display: flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600; background: var(--y); color: #0a0a0a; box-shadow: 0 6px 20px -6px rgba(255,198,0,.6); }
+.hero .workbtn svg { font-size: 14px; }
+.soc .av { width: 40px; height: 40px; border-radius: 8px; overflow: hidden; flex: none; position: relative; background: #000; display: grid; place-items: center; color: var(--y); font-size: 20px; }
+.soc .av > * { grid-area: 1 / 1; }
+.soc .av .yb { position: absolute; right: -1px; bottom: -1px; width: 16px; height: 16px; border-radius: 5px; background: #ff0000; color: #fff; display: grid; place-items: center; font-size: 9px; }
+html { scroll-behavior: smooth; }
+/* brand colours, toned down so they sit quietly in the dark glass */
+.blogo, .ch .yt, .soc .av .yb, .ig .ring { filter: saturate(.5) brightness(.92); }
+.ig .reel span { opacity: .85; }
+
+/* instagram, bigger */
+.ig { padding: 0 14px 14px; gap: 14px; overflow: hidden; }
+.ig::before { content: ""; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(80% 45% at 100% 0%, rgba(214,41,118,.16), transparent 70%), radial-gradient(60% 40% at 0% 60%, rgba(150,47,191,.1), transparent 70%); }
+.ig > * { position: relative; }
+.ig-banner { height: 110px; margin: 0 -14px; overflow: hidden; -webkit-mask-image: linear-gradient(180deg, #000 30%, transparent 100%); mask-image: linear-gradient(180deg, #000 30%, transparent 100%); }
+.ig-banner img { filter: blur(2px) saturate(.6) brightness(.6); transform: scale(1.1); object-position: 50% 30%; }
+.ig .who { margin-top: -44px; align-items: flex-end; }
+.ig .ring { width: 78px; height: 78px; padding: 3px; }
+.ig .ring img { border: 3px solid #121212; }
+.ig .who b { display: flex; align-items: center; gap: 6px; font-size: 18px; font-weight: 800; letter-spacing: -.02em; }
+.ig .who .tick { color: var(--y); font-size: 15px; display: inline-grid; }
+.ig .who .tx { padding-bottom: 6px; }
+.ig-big .num { display: block; font-size: 52px; color: var(--y); letter-spacing: -.04em; }
+.ig-big span:last-child { display: block; margin-top: 6px; font-size: 14px; color: var(--muted); font-weight: 300; }
+.ig-stats { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--stroke); border-bottom: 1px solid var(--stroke); }
+.ig-stats div { padding: 12px 0; }
+.ig-stats div + div { padding-left: 14px; border-left: 1px solid var(--stroke); }
+.ig-stats .num { display: block; font-size: 18px; }
+.ig-stats span:last-child { display: block; margin-top: 4px; font-size: 11.5px; color: var(--muted); }
+.ig .reels { grid-auto-columns: 46%; gap: 10px; margin: 0 -14px; padding: 0 14px; scroll-padding: 0 14px; }
+.ig .reel { border-radius: 8px; }
+.ig .reel::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(0,0,0,0) 60%, rgba(0,0,0,.7)); }
+.ig .reel em { position: absolute; z-index: 2; left: 9px; bottom: 9px; font-style: normal; font-size: 11.5px; font-weight: 600; padding: 4px 9px; border-radius: 999px; background: rgba(255,255,255,.14); border: 1px solid rgba(255,255,255,.2); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.ig .reel span { z-index: 2; }
+.ig .follow { padding: 9px 18px 9px 9px; font-size: 15px; }
+.ig .follow .blogo { width: 34px; height: 34px; font-size: 17px; }
+
+/* thePJ, stronger */
+.tpj { padding: 0 14px 14px; }
+.tpj-banner { position: relative; height: 150px; margin: 0 -14px; overflow: hidden; }
+.tpj-banner img { object-position: 50% 30%; }
+.tpj-banner::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(10,10,10,.1) 0%, rgba(18,16,12,.95) 100%); }
+.tpj-banner .tagx { position: absolute; z-index: 2; top: 12px; left: 12px; background: rgba(10,10,10,.55); border-color: rgba(255,198,0,.4); color: var(--y); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
+.tpj-head { margin-top: -40px; align-items: flex-end; }
+.tpj-head .av { width: 72px; height: 72px; border-width: 3px; }
+.tpj-head > div { padding-bottom: 6px; }
+.tpj-head b { font-size: 24px; }
+.tpj-words { display: flex; gap: 6px; }
+.tpj-words span { font-size: 12px; font-weight: 600; padding: 5px 12px; border-radius: 999px; border: 1px solid rgba(255,198,0,.35); color: var(--y); background: rgba(255,198,0,.06); }
+.tpj-stats .num { font-size: 24px; }
+.tpj-stats div:last-child { background: rgba(255,198,0,.1); border-color: rgba(255,198,0,.3); }
+.tpj .slider { grid-auto-columns: 86%; }
+.tpj .slider .vid h3 { font-size: 16px; }
+
+/* ---------- clean pass: more air, fewer boxes ---------- */
+main { gap: 14px; padding-left: 16px; padding-right: 16px; padding-bottom: 48px; }
+.slider, .ig .reels { margin: 0 -16px; padding: 0 16px; scroll-padding: 0 16px; }
+body::after { opacity: .035; }
+.ambient img { opacity: .15; }
+.sec { padding: 40px 2px 6px; gap: 14px; align-items: flex-end; }
+.sec h2 { font-size: 22px; white-space: nowrap; }
+.sec span { text-align: right; line-height: 1.35; }
+
+/* about + worked with: hairlines instead of boxes */
+.about, .trust { background: none; border: 0; box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; border-radius: 0; }
+.about { padding: 24px 2px 4px; }
+.about p { font-size: 19px; margin-top: 8px; }
+.trust { padding: 18px 0 20px; border-top: 1px solid var(--stroke); border-bottom: 1px solid var(--stroke); margin-top: 8px; }
+.trust .label { padding: 0 2px; }
+.marquee { margin-top: 16px; margin-left: -16px; margin-right: -16px; }
+
+/* channel rows: quiet list, main channel stays highlighted */
+[data-yt] { gap: 10px !important; }
+.ch { padding: 10px; }
+.ch.glass:not(.main) { background: rgba(255,255,255,.03); box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; }
+.group { padding: 8px 6px; }
+.group .ext { padding: 10px 9px; }
+
+/* cards: roomier insides */
+.ig { padding: 0 18px 18px; gap: 18px; }
+.ig-banner { margin: 0 -18px; }
+.ig .reels { margin: 0 -18px; padding: 0 18px; scroll-padding: 0 18px; }
+.moc { padding: 20px; gap: 18px; }
+.feat div { padding: 12px 0; }
+.tpj { padding: 0 18px 18px; gap: 16px; }
+.tpj-banner { margin: 0 -18px; }
+.tpj .slider { margin: 0 -18px; padding: 0 18px; scroll-padding: 0 18px; }
+.collab { padding: 24px; }
+.cbtns { margin-top: 20px; }
+
+/* all links: lighter tiles, more gap */
+.grid { gap: 10px; }
+.soc.glass { background: rgba(255,255,255,.03); box-shadow: none; backdrop-filter: none; -webkit-backdrop-filter: none; padding: 12px; }
+.site { padding-top: 32px; }
+.site { text-align: center; color: var(--muted); font-size: 13px; padding: 16px 0 4px; }
+.site a { color: var(--text); border-bottom: 1px solid var(--y); }
+</style>
+</head>
+<body>
+<div class="ambient" data-ambient></div>
+<main>
+  <div class="hero">
+    <img data-photo alt="PJ Explained">
+    <div class="over top"><a class="igp" data-ig-pill target="_blank" rel="noopener"></a><a class="workbtn pill-img" href="#work" data-work-top>Work with me</a></div>
+    <div class="over info">
+      <h1>PJ Explained <span class="tick" data-check></span></h1>
+      <div class="tag" data-tagline></div>
+      <div class="reach" data-reach></div>
+      <div class="stats" data-stats></div>
+    </div>
+  </div>
+
+  <div class="about glass"><div class="label">About</div><p>Pop-Culture Enthusiast <span class="soft">&amp; Building</span> <a href="#moctale">Moctale.in</a>!</p></div>
+
+  <div class="trust glass"><div class="label">Worked with <span>and many more</span></div><div class="marquee"><div class="track" data-brands></div></div></div>
+
+  <div class="sec"><h2>Watch on YouTube</h2><span>PJ Explained channels</span></div>
+  <div data-yt style="display:grid;gap:8px"></div>
+
+  <div class="sec"><h2>Instagram</h2><span>New reels daily</span></div>
+  <div class="ig glass" data-ig></div>
+
+  <div class="sec"><h2>Men of Culture</h2><span>The podcast and its extensions</span></div>
+  <div class="group glass" data-moc-group></div>
+
+  <div class="sec" id="moctale"><h2>Moctale</h2><span>What we're building</span></div>
+  <div class="moc glass" data-moc></div>
+
+  <div class="sec"><h2>Latest on PJ Explained</h2><span data-when></span></div>
+  <div class="slider" data-latest></div>
+
+  <div class="sec"><h2>thePJ</h2><span>Raw, real reactions</span></div>
+  <div class="tpj glass" data-thepj></div>
+
+  <div class="sec" id="work"><h2>Work with me</h2><span>Brands, films and podcasts</span></div>
+  <div class="collab pill-img" data-collab>
+    <div class="label">Collaborations open</div>
+    <b>Let's make something people talk about</b>
+    <p class="sub">Reach <strong data-reach-n></strong> movie lovers across YouTube and Instagram. Trusted by Netflix, Marvel, Prime Video and more.</p>
+    <div class="cbtns" data-cbtns></div>
+  </div>
+
+  <div class="sec"><h2>All links</h2><span>Every channel and social</span></div>
+  <div class="grid" data-socials></div>
+
+  <p class="site">Full website → <a href="../">pjexplained.com</a></p>
+</main>
+
+<script>
+const $ = s => document.querySelector(s);
+const YT = PJ.youtube, IG = PJ.instagram, M = PJ.moctale;
+const social = n => PJ.socials.find(s => s.logo === n);
+const img = (src, alt, extra = "") => `<img src="${esc(src)}" alt="${esc(alt)}" loading="lazy" ${extra}>`;
+const vthumb = v => img(thumb(v.id), v.title, `onerror="${thumbFallback}"`);
+const blank = `target="_blank" rel="noopener"`;
+const tile = s => `<span class="blogo" style="background:${s.bg};color:${s.fg || "#fff"}">${logoMask(s.logo)}</span>`;
+const photo = /^https?:/.test(PJ.photo) ? PJ.photo : "../" + PJ.photo;
+const av = c => `<span class="av">${ICON[c.icon]}${img(c.avatar, c.name, `onerror="this.remove()"`)}</span>`;
+const fb = social("facebook");
+
+// hero
+$("[data-ambient]").innerHTML = img(photo, "") + img(PJ.reels[2].img, "");
+$("[data-photo]").src = photo;
+$("[data-photo]").style.objectPosition = PJ.photoPos || "50% 50%";
+$("[data-ig-pill]").href = IG.url;
+$("[data-ig-pill]").innerHTML = `${img(IG.avatar, "")}${esc(IG.handle)}`;
+$("[data-work-top]").insertAdjacentHTML("afterbegin", ICON.mail);
+$("[data-work-top]").style.setProperty("--img", `url("${thumb(PJ.channels[1].cover)}")`);
+$("[data-tagline]").textContent = PJ.tagline;
+$("[data-check]").innerHTML = ICON.check;
+$("[data-reach]").innerHTML = `<span><b>${esc(PJ.totals[2].value)}</b> followers</span><span><b>${esc(PJ.totals[3].value)}</b> views</span><span><b>17+</b> brands</span>`;
+$("[data-stats]").innerHTML = `
+  <a class="glass" href="${esc(YT.url)}" ${blank}>${tile({ logo: "youtube", bg: "#ff0000" })}<span><span class="num">${esc(YT.subs)}</span><small>YouTube</small></span></a>
+  <a class="glass" href="${esc(IG.url)}" ${blank}>${tile(social("instagram"))}<span><span class="num">${esc(IG.followers)}</span><small>Instagram</small></span></a>
+  <a class="glass fb" href="${esc(fb.url)}" ${blank} aria-label="Facebook">${tile(fb)}<span><span class="num">${esc(fb.count)}</span><small>Facebook</small></span></a>`;
+
+// brands strip
+const brandItem = b => b.logo ? `<img src="${esc(b.logo)}" alt="${esc(b.name)}" class="${b.mono ? "mono" : ""} ${b.size === "tall" ? "tall" : ""}">` : `<span class="word">${esc(b.name)}</span>`;
+$("[data-brands]").innerHTML = [...PJ.brands, ...PJ.brands].map(brandItem).join("");
+
+// youtube: PJ family
+$("[data-yt]").innerHTML = PJ.channels.filter(c => c.group === "pj").map((c, i) => `
+  <a class="ch glass${i === 0 ? " main" : ""}" href="${esc(c.url)}" ${blank}>
+    ${c.cover ? `<span class="av">${img(thumb(c.cover), c.name, `style="object-position:${esc(c.coverPos || "50% 50%")}" onerror="${thumbFallback}"`)}</span>` : av(c)}
+    <span class="txt"><b>${esc(c.name)}</b><small>${esc(c.tag)} · <strong>${esc(c.subs)}</strong> subscribers</small></span>
+    <span class="yt">${logoMask("youtube")}</span>
+  </a>`).join("");
+
+// men of culture + its extension channels
+$("[data-moc-group]").innerHTML = PJ.channels.filter(c => c.group === "moc").map(c => `
+  <a class="ch${c.ext ? " ext" : ""}" href="${esc(c.url)}" ${blank}>
+    ${c.ext ? av(c) : `<span class="av">${img(thumb(c.cover), c.name, `style="object-position:${esc(c.coverPos || "50% 50%")}" onerror="${thumbFallback}"`)}</span>`}
+    <span class="txt"><b>${esc(c.name)}${c.verified ? ICON.check : ""}${c.ext ? `<span class="tagx">Extension</span>` : ""}</b><small>${c.ext ? "" : "Podcast · "}<strong>${esc(c.subs)}</strong> subscribers · ${esc(c.videos)} videos</small></span>
+    ${c.ext ? `<span class="chev">${ICON.arrow}</span>` : `<span class="yt">${logoMask("youtube")}</span>`}
+  </a>`).join("");
+
+// instagram
+$("[data-ig]").innerHTML = `
+  <div class="ig-banner">${img(PJ.reels[1].img, "")}</div>
+  <div class="who">
+    <span class="ring ig-grad">${img(IG.avatar, IG.name)}</span>
+    <div class="tx"><b>${esc(IG.handle)} <span class="tick">${ICON.check}</span></b><small>${esc(IG.name)} on Instagram</small></div>
+  </div>
+  <div class="ig-big"><span class="num">${esc(IG.followers)}</span><span>followers and growing every day</span></div>
+  <div class="ig-stats">
+    <div><span class="num">${esc(IG.posts)}</span><span>posts</span></div>
+    <div><span class="num">${esc(IG.rhythm)}</span><span>new reels</span></div>
+    <div><span class="num">Verified</span><span>account</span></div>
+  </div>
+  <div class="reels">${PJ.reels.slice(0, 8).map((r, i) => `<a class="reel" href="${esc(r.url)}" ${blank}>${img(r.img, "Instagram reel")}<span class="blogo ig-grad">${logoMask("instagram")}</span><em>${i === 0 ? "Latest · " : ""}${esc(ago(r.date))}</em></a>`).join("")}</div>
+  <a class="follow" href="${esc(IG.url)}" ${blank}><span><span class="blogo ig-grad">${logoMask("instagram")}</span>Follow ${esc(IG.handle)}</span>${ICON.arrow}</a>`;
+
+// moctale
+const mocYT = PJ.channels.find(c => c.group === "moctale");
+$("[data-moc]").innerHTML = `
+  <div class="mtop"><img class="mlogo" src="${esc(M.logo)}" alt="Moctale"><span class="label">Now on iOS and Android</span></div>
+  <div><h3>${esc(M.tagline)} <span>Co-founded by PJ.</span></h3><p class="what" style="margin-top:8px">India's home for movie and show lovers — one app to find, judge and talk about everything you watch.</p></div>
+  <div class="feat">${M.features.map(x => `<div><b>${esc(x.title)}</b><span>${esc(x.text)}</span></div>`).join("")}</div>
+  <div class="stores">
+    <a class="store" href="${esc(M.ios)}" ${blank}>${logoMask("apple")}<span><small>Download on the</small><b>App Store</b></span></a>
+    <a class="store" href="${esc(M.android)}" ${blank}>${logoMask("googleplay")}<span><small>Get it on</small><b>Google Play</b></span></a>
+  </div>
+  <div class="mstats">${M.stats.slice(0, 3).map(s => `<div class="glass"><span class="num">${esc(s.value)}</span><span>${esc(s.label)}</span></div>`).join("")}</div>
+  <div class="mlinks">${M.links.filter(l => l.logo).map(l => `<a class="glass" href="${esc(l.url)}" ${blank}>${logoMask(l.logo)}${esc(l.name)}${l.logo === "youtube" && mocYT ? ` · ${esc(mocYT.subs)}` : ""}</a>`).join("")}</div>`;
+
+// video sliders: PJ Explained, then thePJ
+const slide = v => `
+  <a class="vid" href="${watch(v.id)}" ${blank}>${vthumb(v)}
+    <div class="over top"><span>${esc(v.views)} views</span><span>${esc(ago(v.date))}</span></div>
+    <div class="over info"><h3>${esc(v.title)}</h3><span class="circle">${ICON.play}</span></div>
+  </a>`;
+$("[data-when]").textContent = `${PJ.pjVideos.length} recent videos`;
+$("[data-latest]").innerHTML = PJ.pjVideos.map(slide).join("");
+const T = PJ.thepj, tpj = PJ.channels.find(c => c.handle === T.handle);
+$("[data-thepj]").innerHTML = `
+  <div class="tpj-banner">${img(thumb(T.videos[0].id), "", `onerror="${thumbFallback}"`)}<span class="tagx">PJ Explained extension</span></div>
+  <div class="tpj-head">
+    <span class="av">${img(thumb(tpj.cover), T.name, `style="object-position:${esc(tpj.coverPos || "50% 50%")}" onerror="${thumbFallback}"`)}</span>
+    <div><b>${esc(T.name)}</b><small>${esc(T.handle)} · ${esc(T.stats[0].value)} subscribers</small></div>
+  </div>
+  <div class="tpj-words"><span>Raw</span><span>Real</span><span>Unfiltered</span></div>
+  <p class="tpj-blurb">${esc(T.blurb)}</p>
+  <div class="tpj-stats">${T.stats.map(s => `<div><span class="num">${esc(s.value)}</span><span>${esc(s.label)}</span></div>`).join("")}</div>
+  <div class="slider">${T.videos.map(slide).join("")}</div>
+  <a class="tpj-sub" href="${esc(T.url)}" ${blank}><span><span class="blogo">${logoMask("youtube")}</span>Subscribe to thePJ</span>${ICON.arrow}</a>`;
+
+// all links: every YouTube channel, every social, and Moctale
+const linkCard = (icon, name, sub, url) => `<a class="soc glass" href="${esc(url)}" ${blank}>${icon}<span class="tx"><b>${esc(name)}</b><small>${sub}</small></span></a>`;
+$("[data-socials]").innerHTML = [
+  ...PJ.channels.map(c => linkCard(
+    `<span class="av">${ICON[c.icon]}${img(c.avatar, c.name, `onerror="this.remove()"`)}<span class="yb">${logoMask("youtube")}</span></span>`,
+    c.name, `<strong>${esc(c.subs)}</strong> subs`, c.url)),
+  ...PJ.socials.map(s => linkCard(tile(s), s.name, s.count ? `<strong>${esc(s.count)}</strong> ${esc(s.unit)}` : esc(s.handle), s.url)),
+  linkCard(`<span class="av">${img(M.icon, "Moctale")}</span>`, "Moctale app", "iOS and Android", "https://www.moctale.in")
+].join("");
+
+// work with me
+$("[data-collab]").style.setProperty("--img", `url("${thumb(PJ.channels[1].cover)}")`);
+$("[data-reach-n]").textContent = PJ.totals[2].value;
+$("[data-cbtns]").innerHTML = (PJ.email ? `<a class="primary" href="mailto:${esc(PJ.email)}"><span>${ICON.mail}${esc(PJ.email)}</span>${ICON.arrow}</a>` : "")
+  + `<a class="secondary" href="${esc(IG.url)}" ${blank}><span>${logoMask("instagram")}DM on Instagram</span>${ICON.arrow}</a>`;
+</script>
+</body>
+</html>

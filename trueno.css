@@ -1,0 +1,22 @@
+/* Trueno — the only typeface on this site. Every weight, mapped properly. */
+@font-face { font-family: "Trueno"; font-weight: 200; font-style: normal; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoUltLt.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 200; font-style: italic; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoUltLtIt.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 300; font-style: normal; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoLt.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 300; font-style: italic; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoLtIt.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 400; font-style: normal; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoRg.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 400; font-style: italic; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoRgIt.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 600; font-style: normal; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoSBd.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 600; font-style: italic; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoSBdIt.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 700; font-style: normal; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoBd.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 700; font-style: italic; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoBdIt.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 800; font-style: normal; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoExBd.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 800; font-style: italic; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoExBdIt.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 900; font-style: normal; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoBlk.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 900; font-style: italic; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoBlkIt.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 950; font-style: normal; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoUltBlk.woff") format("woff"); }
+@font-face { font-family: "Trueno"; font-weight: 950; font-style: italic; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoUltBlkIt.woff") format("woff"); }
+
+/* Trueno's outline cut, for decorative display text */
+@font-face { font-family: "Trueno Outline"; font-weight: 700; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoBdOl.woff") format("woff"); }
+@font-face { font-family: "Trueno Outline"; font-weight: 800; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoExBdOl.woff") format("woff"); }
+@font-face { font-family: "Trueno Outline"; font-weight: 900; font-display: swap; src: url("https://fonts.cdnfonts.com/s/19706/TruenoBlkOl.woff") format("woff"); }
