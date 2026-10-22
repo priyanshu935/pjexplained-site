@@ -9,9 +9,9 @@
 <meta property="og:title" content="PJ Explained">
 <meta property="og:description" content="Pop-Culture Enthusiast & Building Moctale.in!">
 <meta property="og:url" content="https://pjexplained.com">
-<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png">
-<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png">
-<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png?v=2">
+<link rel="icon" type="image/png" sizes="192x192" href="/assets/favicon-192.png?v=2">
+<link rel="apple-touch-icon" href="/assets/apple-touch-icon.png?v=2">
 <link rel="preconnect" href="https://fonts.cdnfonts.com" crossorigin>
 <link rel="stylesheet" href="trueno.css">
 <script src="data.js"></script>
@@ -547,10 +547,12 @@ footer { margin-top: 112px; }
   .hmeta { font-size: 12px; margin-top: 14px; }
   .banner .lead { margin: 12px 0 20px; }
   .banner .ctas { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-  .cta { padding: 9px 10px 9px 9px; gap: 8px; }
-  .cta .blogo { width: 32px; height: 32px; font-size: 16px; }
-  .cta b { font-size: 14px; }
-  .cta small { font-size: 11px; }
+  .cta { padding: 9px 14px 9px 9px; gap: 8px; }
+  .cta .blogo { width: 30px; height: 30px; font-size: 15px; }
+  .cta > span:last-child { min-width: 0; }
+  .cta b { font-size: 13.5px; }
+  .cta small { font-size: 10.5px; }
+  .cta .lgt { display: none; }
   .handles { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; margin-top: 22px; padding-top: 18px; }
   .handles a { flex-direction: column; align-items: center; text-align: center; gap: 6px; }
   .handles .blogo { width: 32px; height: 32px; font-size: 16px; }
@@ -722,6 +724,77 @@ footer { margin-top: 112px; }
   .nav .pill { padding: 6px 12px; font-size: 12.5px; }
   .logo .av { width: 30px; height: 30px; }
 }
+.cta .smt { display: none; }
+@media (max-width: 640px) { .cta .smt { display: inline; } }
+@media (max-width: 380px) {
+  .cta { padding: 9px 10px 9px 8px; gap: 6px; }
+  .cta .blogo { width: 28px; height: 28px; font-size: 14px; }
+  .cta small { font-size: 10px; letter-spacing: -.01em; }
+}
+
+/* ---------- tighter corners everywhere ---------- */
+:root { --r: 10px; --r-sm: 6px; }
+.moc, .collab { border-radius: 14px; }
+.collab .box, .collab .box .wa, .about, .fwrap { border-radius: 10px; }
+.cta, .igb, .store, .mpills a, .mstat, .handles a, .feed .counts, .ntotals, .total { border-radius: 8px; }
+.blogo { border-radius: 8px; }
+.nav .bar { border-radius: 14px; }
+@media (max-width: 640px) {
+  :root { --r: 10px; }
+  .moc, .collab { border-radius: 12px; }
+}
+
+/* ---------- Moctale: centred, dominant header ---------- */
+.moc .mhead { grid-column: 1 / -1; text-align: center; display: grid; justify-items: center; padding-bottom: 36px; border-bottom: 1px solid rgba(165,123,255,.18); }
+.moc .mhead .label { font-size: 13px; letter-spacing: .2em; }
+.moc .mhead .mlogo { height: 84px; margin: 20px 0 18px; }
+.moc .mhead .mby { margin: 0; max-width: none; font-size: 17px; font-weight: 300; color: #d4d1dd; }
+.moc .mhead .mby b { font-weight: 600; color: var(--text); }
+.moc .mhead .mby span { color: var(--m); font-weight: 400; }
+.moc .mhead + div > .h2 { margin-top: 0; }
+@media (max-width: 640px) {
+  .moc .mhead { padding-bottom: 22px; }
+  .moc .mhead .label { font-size: 11px; }
+  .moc .mhead .mlogo { height: auto; width: min(82%, 270px); margin: 14px 0 12px; }
+  .moc .mhead .mby { font-size: 14px; line-height: 1.45; }
+  .moc .mhead .mby span { display: block; }
+}
+
+/* ---------- all links ---------- */
+.lk-groups { display: grid; gap: 36px; }
+.lk-gt { display: flex; align-items: baseline; gap: 10px; margin: 0 2px 12px; }
+.lk-gt b { font-size: 12px; font-weight: 600; letter-spacing: .14em; text-transform: uppercase; color: var(--y); white-space: nowrap; }
+.lk-gt span { font-size: 13px; color: var(--muted); font-weight: 300; }
+.lk-gt em { font-style: normal; font-size: 12px; color: var(--muted); margin-left: auto; padding-left: 12px; }
+.lk-gt::after { content: ""; order: 2; flex: 1; height: 1px; background: var(--stroke); align-self: center; }
+.lk-gt em { order: 3; margin-left: 0; padding-left: 0; }
+.lk-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; }
+.lk { display: flex; align-items: center; gap: 12px; padding: 12px 14px 12px 12px; border-radius: 8px; min-width: 0; transition: border-color .2s ease, transform .2s ease; }
+.lk:hover { border-color: rgba(255,198,0,.45); transform: translateY(-2px); }
+.lk-ic { position: relative; flex: none; width: 44px; height: 44px; }
+.lk-av { width: 44px; height: 44px; border-radius: 50%; overflow: hidden; background: #000; display: grid; place-items: center; color: var(--y); font-size: 20px; }
+.lk-av > * { grid-area: 1 / 1; }
+.lk-av img { width: 100%; height: 100%; object-fit: cover; }
+.lk-tile { width: 44px; height: 44px; font-size: 21px; border-radius: 8px; }
+.lk-badge { position: absolute; right: -3px; bottom: -3px; width: 19px; height: 19px; border-radius: 5px; background: #e62117; color: #fff; display: grid; place-items: center; font-size: 10px; border: 2px solid #141414; filter: saturate(.6) brightness(.95); }
+.lk-t { flex: 1; min-width: 0; display: grid; gap: 1px; line-height: 1.3; }
+.lk-t b { font-size: 15px; font-weight: 600; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lk-w { font-size: 12.5px; color: var(--text); opacity: .78; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lk-w i { font-style: normal; font-weight: 600; }
+.lk-t small { font-size: 11.5px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.lk-n { flex: none; text-align: right; display: grid; line-height: 1.2; }
+.lk-n b { font-size: 16px; font-weight: 800; color: var(--y); }
+.lk-n small { font-size: 10.5px; color: var(--muted); }
+.lk-go { flex: none; color: var(--muted); font-size: 14px; display: grid; }
+@media (max-width: 1000px) { .lk-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .lk-groups { gap: 28px; }
+  .lk-grid { grid-template-columns: 1fr; gap: 8px; }
+  .lk-gt span { font-size: 12px; }
+  .lk { padding: 11px 12px 11px 11px; gap: 11px; }
+  .lk-ic, .lk-av, .lk-tile { width: 40px; height: 40px; }
+  .lk-t b { font-size: 14.5px; }
+}
 </style>
 </head>
 <body>
@@ -791,9 +864,12 @@ footer { margin-top: 112px; }
 
   <section id="moctale" class="reveal">
     <div class="moc glass">
-      <div>
+      <div class="mhead">
         <div class="label">What we're building</div>
         <img class="mlogo" data-moc-logo alt="Moctale">
+        <p class="mby">Co-founded by <b>Priyanshu Jaiswal</b> <span>(PJ Explained)</span></p>
+      </div>
+      <div>
         <h2 class="h2">Now on <span class="accent">iOS and Android</span></h2>
         <p data-moc-blurb></p>
         <div class="mfeat" data-mfeat></div>
@@ -832,9 +908,6 @@ footer { margin-top: 112px; }
 
     <div class="subhead"><h3>YouTube channels</h3><span data-yt-count></span></div>
     <div class="chips" data-chips></div>
-
-    <div class="subhead"><h3>Follow everywhere</h3><span>Socials and community</span></div>
-    <div class="chips" data-socials></div>
   </section>
 
   <section id="brands" class="reveal">
@@ -859,6 +932,14 @@ footer { margin-top: 112px; }
         <div class="contact" data-contact></div>
       </div>
     </div>
+  </section>
+
+  <section id="links" class="reveal">
+    <div class="head">
+      <div><div class="label">All links</div><h2 class="h2">Find me <span class="accent">everywhere</span></h2></div>
+      <p data-lk-count></p>
+    </div>
+    <div class="lk-groups" data-lk></div>
   </section>
 
   <footer>
@@ -898,16 +979,34 @@ $("[data-work-btn]").style.setProperty("--img", `url("${thumb(PJ.channels[1].cov
 
 // hero
 $("[data-tagline]").textContent = PJ.tagline;
-$("[data-photo]").src = PJ.photo;
-$("[data-photo]").style.objectPosition = PJ.photoPos || "50% 50%";
+// text-free photo, cropped so the face sits in the middle of the banner at every screen size
+const heroImg = $("[data-photo]");
+const FACE = { x: .66, y: .38 }; // where the face is in /assets/hero-links.jpg
+const fitFace = () => {
+  const W = heroImg.clientWidth, H = heroImg.clientHeight, iw = heroImg.naturalWidth, ih = heroImg.naturalHeight;
+  if (!W || !H || !iw) return;
+  const k = Math.max(W / iw, H / ih), sw = iw * k, sh = ih * k;
+  const clamp = v => Math.min(100, Math.max(0, v * 100));
+  const px = sw > W + 1 ? clamp((FACE.x * sw - W / 2) / (sw - W)) : 50;
+  const py = sh > H + 1 ? clamp((FACE.y * sh - H * .42) / (sh - H)) : 50;
+  heroImg.style.objectPosition = `${px.toFixed(1)}% ${py.toFixed(1)}%`;
+};
+if (PJ.linksPhoto) {
+  heroImg.addEventListener("load", fitFace);
+  addEventListener("resize", fitFace);
+  heroImg.src = PJ.linksPhoto;
+} else {
+  heroImg.src = PJ.photo;
+  heroImg.style.objectPosition = PJ.photoPos || "50% 50%";
+}
 $("[data-updated]").textContent = updatedLabel();
 $("[data-updated-2]").textContent = updatedLabel();
 $("[data-yt-link]").href = YT.url;
 $("[data-ig-link]").href = IG.url;
 $("[data-yt-icon]").innerHTML = logoMask("youtube");
 $("[data-ig-icon]").innerHTML = logoMask("instagram");
-$("[data-yt-sub]").textContent = `${YT.subs} on YouTube`;
-$("[data-ig-sub]").textContent = `${IG.followers} on Instagram`;
+$("[data-yt-sub]").innerHTML = `<span class="lgt">${esc(YT.subs)} on YouTube</span><span class="smt">${esc(YT.subs)} subscribers</span>`;
+$("[data-ig-sub]").innerHTML = `<span class="lgt">${esc(IG.followers)} on Instagram</span><span class="smt">${esc(IG.followers)} followers</span>`;
 $("[data-handles]").innerHTML = [
   { ...ytTile, n: YT.subs, l: "YouTube", url: YT.url },
   ...["instagram", "facebook", "threads", "x"].map(k => { const s = social(k); return { ...s, n: s.count, l: s.name }; })
@@ -1002,11 +1101,35 @@ const chip = c => `
 $("[data-chips]").innerHTML = PJ.channelGroups.map(g => `
   <div class="cgroup"><b>${esc(g.name)}</b><span>${esc(g.note)}</span></div>
   ${PJ.channels.filter(c => c.group === g.id).map(chip).join("")}`).join("");
-$("[data-socials]").innerHTML = PJ.socials.map(s => `
-  <a class="chip glass" href="${esc(s.url)}" ${blank}>
-    ${tile(s)}
-    <span class="tx"><b>${esc(s.name)}</b><div class="h">${esc(s.handle)}</div><div class="s">${s.count ? `<strong>${esc(s.count)}</strong> ${esc(s.unit)}` : "Follow along"}</div></span>
-  </a>`).join("");
+
+// all links: every channel, social and the app, grouped so it's clear what each one is
+const ytBadge = `<span class="lk-badge">${logoMask("youtube")}</span>`;
+const lkChannel = c => ({ name: c.name, platform: "YouTube", role: c.tag, handle: c.handle, count: c.subs, unit: "subscribers", url: c.url,
+  icon: `<span class="lk-av">${ICON[c.icon]}${img(c.avatar, c.name, `onerror="this.remove()"`)}</span>${ytBadge}` });
+const lkSocial = s => ({ name: s.name, platform: "", role: s.role, handle: s.handle, count: s.count, unit: s.unit, url: s.url, icon: tile(s, "blogo lk-tile") });
+const appRating = M.stats.find(s => s.key === "appstore");
+const lkGroups = [
+  { title: "PJ Explained", note: "YouTube channels", items: PJ.channels.filter(c => c.group === "pj").map(lkChannel) },
+  { title: "PJ Explained", note: "Socials", items: PJ.socials.map(lkSocial) },
+  { title: "Men of Culture", note: "Podcast channels", items: PJ.channels.filter(c => c.group === "moc").map(lkChannel) },
+  { title: "Moctale", note: "The app PJ co-founded", items: [
+    ...PJ.channels.filter(c => c.group === "moctale").map(c => ({ ...lkChannel(c), role: "The app's own channel" })),
+    { name: "Moctale app", platform: "App", role: "iOS and Android", handle: "moctale.in", count: appRating && appRating.value, unit: "on the App Store", url: "https://www.moctale.in",
+      icon: `<span class="lk-av">${img(M.icon, "Moctale")}</span>` }
+  ] }
+];
+const lkRow = l => `
+  <a class="lk glass" href="${esc(l.url)}" ${blank}>
+    <span class="lk-ic">${l.icon}</span>
+    <span class="lk-t"><b>${esc(l.name)}</b><span class="lk-w">${l.platform ? `<i>${esc(l.platform)}</i> · ` : ""}${esc(l.role)}</span><small>${esc(l.handle)}</small></span>
+    ${l.count ? `<span class="lk-n"><b>${esc(l.count)}</b><small>${esc(l.unit)}</small></span>` : `<span class="lk-go">${ICON.arrow}</span>`}
+  </a>`;
+$("[data-lk-count]").textContent = `${lkGroups.reduce((n, g) => n + g.items.length, 0)} places to watch, follow and talk to PJ, from YouTube to Moctale.`;
+$("[data-lk]").innerHTML = lkGroups.map(g => `
+  <div class="lk-group">
+    <div class="lk-gt"><b>${esc(g.title)}</b><span>${esc(g.note)}</span><em>${g.items.length}</em></div>
+    <div class="lk-grid">${g.items.map(lkRow).join("")}</div>
+  </div>`).join("");
 
 // brands
 $("[data-brands]").innerHTML = PJ.brands.map(b => {

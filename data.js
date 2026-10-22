@@ -93,14 +93,14 @@ const PJ = {
   // Socials, shown with their real logos and colours. count = shown when filled in.
   // logo = the brand's icon name, bg = its brand colour
   socials: [
-    { name: "Instagram", handle: "@pjexplained",         logo: "instagram", bg: "linear-gradient(45deg,#feda75,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5)", count: "934K",   unit: "followers", url: "https://www.instagram.com/pjexplained" },
-    { name: "Facebook",  handle: "PJ Explained",         logo: "facebook",  bg: "#0866ff", count: "188K",   unit: "followers", url: "https://www.facebook.com/pjexplained" },
-    { name: "Threads",   handle: "@pjexplained",         logo: "threads",   bg: "#000",    count: "127.9K", unit: "followers", url: "https://www.threads.net/@pjexplained" },
-    { name: "X",         handle: "@pjexplained",         logo: "x",         bg: "#000",    count: "61.8K",  unit: "followers", url: "https://x.com/pjexplained" },
-    { name: "Snapchat",  handle: "@pjexplained",         logo: "snapchat",  bg: "#fffc00", fg: "#000", url: "https://www.snapchat.com/add/pjexplained" },
-    { name: "WhatsApp",  handle: "PJ Explained channel", logo: "whatsapp",  bg: "#25d366", url: "https://whatsapp.com/channel/0029VaijEmHFXUuRpevXex2o" },
-    { name: "LinkedIn",  handle: "Priyanshu Jaiswal",    logo: "linkedin",  bg: "#0a66c2", url: "https://www.linkedin.com/in/priyanshu-jaiswal-531058318/" },
-    { name: "Reddit",    handle: "r/PJExplained",        logo: "reddit",    bg: "#ff4500", url: "https://www.reddit.com/r/PJExplained/" } // ← confirm this community name
+    { name: "Instagram", handle: "@pjexplained", role: "Reels, posts and stories",         logo: "instagram", bg: "linear-gradient(45deg,#feda75,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5)", count: "934K",   unit: "followers", url: "https://www.instagram.com/pjexplained" },
+    { name: "Facebook",  handle: "PJ Explained", role: "Videos and updates",         logo: "facebook",  bg: "#0866ff", count: "188K",   unit: "followers", url: "https://www.facebook.com/pjexplained" },
+    { name: "Threads",   handle: "@pjexplained", role: "Quick takes and updates",         logo: "threads",   bg: "#000",    count: "127.9K", unit: "followers", url: "https://www.threads.net/@pjexplained" },
+    { name: "X",         handle: "@pjexplained", role: "Posts and film chatter",         logo: "x",         bg: "#000",    count: "61.8K",  unit: "followers", url: "https://x.com/pjexplained" },
+    { name: "Snapchat",  handle: "@pjexplained", role: "Stories and behind the scenes",         logo: "snapchat",  bg: "#fffc00", fg: "#000", url: "https://www.snapchat.com/add/pjexplained" },
+    { name: "WhatsApp",  handle: "PJ Explained channel", role: "Channel for new video alerts", logo: "whatsapp",  bg: "#25d366", url: "https://whatsapp.com/channel/0029VaijEmHFXUuRpevXex2o" },
+    { name: "LinkedIn",  handle: "Priyanshu Jaiswal", role: "Professional profile",    logo: "linkedin",  bg: "#0a66c2", url: "https://www.linkedin.com/in/priyanshu-jaiswal-531058318/" },
+    { name: "Reddit",    handle: "r/PJExplained", role: "Fan community",        logo: "reddit",    bg: "#ff4500", url: "https://www.reddit.com/r/PJExplained/" } // ← confirm this community name
   ],
 
   // Moctale — what we're building
