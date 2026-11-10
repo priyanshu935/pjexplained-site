@@ -10,7 +10,7 @@
   ================================================================
 */
 const PJ = {
-  updated: "2026-10-22",
+  updated: "2026-11-10",
   name: "PJ Explained",
   realName: "Priyanshu Jaiswal",
   tagline: "Just a man with his internet connection.",
@@ -27,54 +27,54 @@ const PJ = {
 
   youtube: {
     name: "PJ Explained", handle: "@PJExplained", url: "https://www.youtube.com/@PJExplained",
-    subs: "2.69M", views: "2B+", videos: "3,257", since: "2017"
+    subs: "2.7M", views: "2B+", videos: "3,298", since: "2017"
   },
 
   instagram: {
     name: "thePJ", handle: "@pjexplained", url: "https://www.instagram.com/pjexplained",
-    followers: "934K", posts: "2,127", rhythm: "Daily",
+    followers: "940K", posts: "2,167", rhythm: "Daily",
     avgViews: "",     // e.g. "450K" — fill in from Instagram Insights, shows up automatically
     engagement: "",   // e.g. "6.2%"
-    avatar: "https://scontent.cdninstagram.com/v/t51.2885-19/475347144_597244096603272_6093038587793234731_n.jpg?stp=dst-jpg_s150x150_tt6&_nc_cat=1&ccb=7-5&_nc_sid=f7ccc5&efg=eyJ2ZW5jb2RlX3RhZyI6InByb2ZpbGVfcGljLnd3dy4xMDgwLkMzIn0%3D&_nc_ohc=wzz95cSYfcYQ7kNvwFxJvnG&_nc_oc=AdpWxi8kpnKGqtP0SPOwLtENaswqozE9bx93b5sAVpkkQJB1wG1PSB2X3cjeF0Roo3A&_nc_zt=24&_nc_ht=scontent.cdninstagram.com&_nc_ss=79689&oh=00_AQMTwHx5nHck4e18lrXcfOzwC_aYSur0lXQKvlY7mnyL4A&oe=6ADFA0C8"
+    avatar: "/assets/ig-avatar.jpg" // saved locally; Instagram image links expire
   },
 
   // Latest Instagram reels (newest first). date = day it was posted.
   reels: [
-    { url: "https://www.instagram.com/pjexplained/reel/DeyPznFJe1j/", date: "2026-10-21", img: "https://scontent.cdninstagram.com/v/t51.82787-15/862620152_18472689319186524_654258646279544678_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=1&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=7SK6rYK5Q9AQ7kNvwFZ0VN0&_nc_oc=AdpN0Hj4yuNL6A1LRP1AZKVs6YlXAS2uNC93o5AmrASnuL1Ty0dry9INrG_jNaeJ8Pg&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQOH6H8-ApoF6BNdbRNeWOYsnZA0UkaItxpWirgwqiPxvg&oe=6ADF9EF7" },
-    { url: "https://www.instagram.com/pjexplained/reel/DewtKbHpjSZ/", date: "2026-10-21", img: "https://scontent.cdninstagram.com/v/t51.71878-15/855924150_1613187900289788_5597810234055540296_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=LeAkv05HkU0Q7kNvwF6ZnUR&_nc_oc=AdpxnukNzyUGXuFvH8CDdscUmdRkwBW86RkP64i1LAaWRvyIKXigr9tULdClEvbPjus&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQOnul1MiTwVFWeu8f7rkIG80w7wcoBgGMi8EggttSPEwg&oe=6ADFA722" },
-    { url: "https://www.instagram.com/pjexplained/reel/DewSWjipwi-/", date: "2026-10-21", img: "https://scontent.cdninstagram.com/v/t51.82787-15/860006196_18472538215186524_7920493375089068632_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=PKZ6uvz7qKwQ7kNvwEcHGCK&_nc_oc=AdqVJxdCt7s3l6Xrs2ILsTGjS73qjQu2HAKZZGjlI_G5kLZec42CSF4QgvlPBbk2rIk&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQPzj_tx0inpa9H-ZIUjSIlvmFGzl3fmT4HSbOlQkOitVg&oe=6ADFB269" },
-    { url: "https://www.instagram.com/pjexplained/reel/Devs7RlJ4BO/", date: "2026-10-20", img: "https://scontent.cdninstagram.com/v/t51.82787-15/860801999_18472500541186524_6595404137316161784_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=BQA0DCbjAlYQ7kNvwFVS5hk&_nc_oc=AdoqaZ6hI7eTbDi6W3Zf_JPpUWJzbPBQjN-Y3HtS6-woEuaSCa9pKhDqCeRmN5AGMo0&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQNGKE8oWkTX5gbpgYwxU5Ch_shPqn_WJG_FOj6_tyvBjA&oe=6ADF9F6D" },
-    { url: "https://www.instagram.com/pjexplained/reel/DeuZIQ2PoNj/", date: "2026-10-20", img: "https://scontent.cdninstagram.com/v/t51.71878-15/858462401_1155294203504654_8408185217480998853_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=110&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=iuTtX07NNJYQ7kNvwFziz3D&_nc_oc=AdruYygAEZG7DnuCqmOf0QOUmfA6sYbLx6xAu3saj8jTuLiKYNSo_0GZHWCLpahOguY&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQNCs7RTqodq7j47xSbsfphZacc5cR_kAXMwgNdgFBaDyg&oe=6ADFA382" },
-    { url: "https://www.instagram.com/pjexplained/reel/DeuDVR6hcGm/", date: "2026-10-20", img: "https://scontent.cdninstagram.com/v/t51.82787-15/857699804_18472338943186524_7569742533435777828_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=b2fLSOYtSiIQ7kNvwGQ2NTk&_nc_oc=Ado3_N9EBQ9COWSWDCQ2Ou8uGLb9Xdru4ZygcMTElSkIsD3U6-l0w6h-NVOitwhXpac&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQN1Tkycigh8T4QYgT-CMSVN1n_r6YGMnKBzUEyapSusIg&oe=6ADFA470" },
-    { url: "https://www.instagram.com/pjexplained/reel/Det1lUDhvvY/", date: "2026-10-20", img: "https://scontent.cdninstagram.com/v/t51.82787-15/859087577_18472338691186524_4800327123848275600_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=109&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=zidM_j6k_hEQ7kNvwFFdDng&_nc_oc=Adqqy9Xgiihi6F4JKlnvG7ERnBCwBREibb8uSVwR3uO5efghuwbNk9l-6mdS5spukVw&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQMZ-CF_5_lC7x903wsJbbl-x4OcJ4_fTBniPH8XVT88OA&oe=6ADFA0B5" },
-    { url: "https://www.instagram.com/pjexplained/reel/DetpBgKJ4Id/", date: "2026-10-20", img: "https://scontent.cdninstagram.com/v/t51.82787-15/857802432_18472338346186524_7748227620500047201_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=105&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=QJyOOcjS6VYQ7kNvwE4CahU&_nc_oc=Adoa5BGcuLnnDfsHtwLzMkmcQz1c9Gzg-eUBG2vHJ1X42f6_JOsOkHlvdiws-Fi_DUA&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQN5mfp1jopdIXUKp3CbZ8r_z3rAFYCUqPWcehmpiJen7g&oe=6ADFBC28" },
-    { url: "https://www.instagram.com/pjexplained/reel/DeqxLWXJozP/", date: "2026-10-19", img: "https://scontent.cdninstagram.com/v/t51.82787-15/856681129_18472114777186524_5425561458270046313_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=108&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=a2_U4vrhxJMQ7kNvwEYpNKA&_nc_oc=AdqGiAz1aiVNk1nN_HsNtlRWz-ba9BhnIEPJeAoqT6mA8dscax0csXPCOpRyt91YDZU&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQOfaSbLQPOlV7nn4qSnuLwtlzOF8C6O90vNg_-hXJf3lg&oe=6ADF9778" },
-    { url: "https://www.instagram.com/pjexplained/reel/DeqqSnipCGv/", date: "2026-10-18", img: "https://scontent.cdninstagram.com/v/t51.82787-15/855948287_18472107709186524_3185808913994577840_n.jpg?stp=dst-jpg_e35_s640x640_tt6&_nc_cat=111&ccb=7-5&_nc_sid=18de74&efg=eyJlZmdfdGFnIjoiQ0xJUFMuYmVzdF9pbWFnZV91cmxnZW4uQzMifQ%3D%3D&_nc_ohc=EIYW0ZVtxCYQ7kNvwECDWEt&_nc_oc=Adpc6Hmladk7zt7H0J1XUEwlKNs2IBAZz4HWoyvGxd_Zp4_8pE7RXM58zE9HZoMt-18&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=_F70TyU36a-wxAgX2kYhnw&_nc_ss=79689&oh=00_AQPJIv9QoWlW6Cly4uxWuYOMmf38rE7HARNDcF0pFflacQ&oe=6ADFC3CB" }
+    { url: "https://www.instagram.com/pjexplained/reel/Dfi5EC_heK1/", date: "2026-11-10", img: "/assets/reels/Dfi5EC_heK1.jpg" },
+    { url: "https://www.instagram.com/pjexplained/reel/DfhfVoypq8-/", date: "2026-11-09", img: "/assets/reels/DfhfVoypq8-.jpg" },
+    { url: "https://www.instagram.com/pjexplained/reel/DfhNZVdpZDX/", date: "2026-11-09", img: "/assets/reels/DfhNZVdpZDX.jpg" },
+    { url: "https://www.instagram.com/pjexplained/reel/Dfelia6JHWH/", date: "2026-11-08", img: "/assets/reels/Dfelia6JHWH.jpg" },
+    { url: "https://www.instagram.com/pjexplained/reel/DfeAIhKp1_2/", date: "2026-11-08", img: "/assets/reels/DfeAIhKp1_2.jpg" },
+    { url: "https://www.instagram.com/pjexplained/reel/DfcDSCBhMkL/", date: "2026-11-07", img: "/assets/reels/DfcDSCBhMkL.jpg" },
+    { url: "https://www.instagram.com/pjexplained/reel/DfbbnosJLr9/", date: "2026-11-07", img: "/assets/reels/DfbbnosJLr9.jpg" },
+    { url: "https://www.instagram.com/pjexplained/reel/DfY1hjOpo3o/", date: "2026-11-06", img: "/assets/reels/DfY1hjOpo3o.jpg" },
+    { url: "https://www.instagram.com/pjexplained/reel/DfXky5hSIhc/", date: "2026-11-05", img: "/assets/reels/DfXky5hSIhc.jpg" },
+    { url: "https://www.instagram.com/pjexplained/reel/DfXdyjrhIp0/", date: "2026-11-05", img: "/assets/reels/DfXdyjrhIp0.jpg" }
   ],
 
   // Your reach. Shown right under the hero.
   totals: [
-    { value: "2.69M",  label: "YouTube subscribers" },
-    { value: "934K",   label: "Instagram followers" },
+    { value: "2.7M",   label: "YouTube subscribers" },
+    { value: "940K",   label: "Instagram followers" },
     { value: "5.3M+",  label: "followers across platforms" },
     { value: "2.5B+",  label: "YouTube views" }
   ],
 
   // Every YouTube channel in the PJ Explained network. featured = big photo card on the home page.
   channels: [
-    { name: "PJ Explained",              handle: "@PJExplained",            subs: "2.69M", videos: "3.2K", url: "https://www.youtube.com/@PJExplained",            featured: true, tag: "Main channel", group: "pj", icon: "youtube", cover: "G-GOouv3dDI", coverPos: "50% 35%",
+    { name: "PJ Explained",              handle: "@PJExplained",            subs: "2.7M",  videos: "3.3K", url: "https://www.youtube.com/@PJExplained",            featured: true, tag: "Main channel", group: "pj", icon: "youtube", cover: "G-GOouv3dDI", coverPos: "50% 35%",
       avatar: "https://yt3.googleusercontent.com/ytc/AIdro_kZDPy1Lt5dc0Doto1Dqb-uG24R6B1ZkeH7E58r4NMUxkE=s160-c-k-c0x00ffffff-no-rj" },
-    { name: "thePJ",                     handle: "@thepjoffical",           subs: "446K",  videos: "665",  url: "https://www.youtube.com/@thepjoffical",           featured: true, tag: "Reactions", group: "pj", icon: "youtube", cover: "pR3jJlXSMm0", coverPos: "62% 40%",
+    { name: "thePJ",                     handle: "@thepjoffical",           subs: "450K",  videos: "670",  url: "https://www.youtube.com/@thepjoffical",           featured: true, tag: "Reactions", group: "pj", icon: "youtube", cover: "pR3jJlXSMm0", coverPos: "62% 40%",
       avatar: "https://yt3.googleusercontent.com/ARz1iH-SuC2pPQffFIDkkA9B-VU6PIFTffNZg3UhNf9Ys5eDMv65fFxIHfMpX4Q5WlVWYX2fFg=s160-c-k-c0x00ffffff-no-rj" },
-    { name: "Men of Culture",            handle: "@menofculturepodcast",    subs: "414K",  videos: "625",  url: "https://www.youtube.com/@menofculturepodcast",    featured: true, tag: "Podcast", group: "moc", icon: "podcast", cover: "VrAqu5_tq2s", coverPos: "30% 40%", verified: true,
+    { name: "Men of Culture",            handle: "@menofculturepodcast",    subs: "417K",  videos: "630",  url: "https://www.youtube.com/@menofculturepodcast",    featured: true, tag: "Podcast", group: "moc", icon: "podcast", cover: "VrAqu5_tq2s", coverPos: "30% 40%", verified: true,
       avatar: "https://yt3.googleusercontent.com/yhWP66MIak2Jigz8WRrdzJj1UJA7df6WrkIdey5BbNk8O-D2G9pQTbIfK03erOlypgKsn5sH=s160-c-k-c0x00ffffff-no-rj" },
-    { name: "Men of Culture Highlights", handle: "@menofculturehighlights", subs: "219K",  videos: "2.7K", url: "https://www.youtube.com/@menofculturehighlights", tag: "Podcast highlights", group: "moc", ext: true, icon: "podcast",
+    { name: "Men of Culture Highlights", handle: "@menofculturehighlights", subs: "220K",  videos: "2.8K", url: "https://www.youtube.com/@menofculturehighlights", tag: "Podcast highlights", group: "moc", ext: true, icon: "podcast",
       avatar: "https://yt3.googleusercontent.com/ZTzKSl5khHFLDTAWkFP7PZZikio9a90V6XqQEOP8dO6eGiZhdU3m0bAeJrg1LYAMKCTQ5CzuFg=s160-c-k-c0x00ffffff-no-rj" },
-    { name: "Men of Culture Ultra",      handle: "@MenofCultureUltra",      subs: "165K",  videos: "271",  url: "https://www.youtube.com/@MenofCultureUltra", tag: "Podcast extension", group: "moc", ext: true, icon: "podcast",
+    { name: "Men of Culture Ultra",      handle: "@MenofCultureUltra",      subs: "165K",  videos: "275",  url: "https://www.youtube.com/@MenofCultureUltra", tag: "Podcast extension", group: "moc", ext: true, icon: "podcast",
       avatar: "https://yt3.googleusercontent.com/1rOrRYgogQ5e4VKojTNG7zU4-V3SxhSJFr-s-WOHpa8vBESdLjyzY0kUFMSrXExHGkq4_3jH=s160-c-k-c0x00ffffff-no-rj" },
-    { name: "thePJ Gaming",              handle: "@gamingthepj",            subs: "70.1K", videos: "6",    url: "https://www.youtube.com/@gamingthepj", tag: "Gaming", group: "pj", icon: "gaming",
+    { name: "thePJ Gaming",              handle: "@gamingthepj",            subs: "70.1K", videos: "8",    url: "https://www.youtube.com/@gamingthepj", tag: "Gaming", group: "pj", icon: "gaming",
       avatar: "/assets/thepj-gaming.jpg" },
-    { name: "Moctale",                   handle: "@moctaleYT",              subs: "5.51K", videos: "1",    url: "https://www.youtube.com/@moctaleYT", tag: "Moctale", group: "moctale", icon: "moctale",
+    { name: "Moctale",                   handle: "@moctaleYT",              subs: "5.7K",  videos: "1",    url: "https://www.youtube.com/@moctaleYT", tag: "Moctale", group: "moctale", icon: "moctale",
       avatar: "https://yt3.googleusercontent.com/v0sbLWpp3mInP9SesAXcon7jd-bMDpMeEoNpragTVZ4SrO1qnvF8sMNzlHuFKKeVuDW8h2-zNb0=s120-c-k-c0x00ffffff-no-rj" }
   ],
   // How channels are grouped on the page
@@ -93,9 +93,9 @@ const PJ = {
   // Socials, shown with their real logos and colours. count = shown when filled in.
   // logo = the brand's icon name, bg = its brand colour
   socials: [
-    { name: "Instagram", handle: "@pjexplained", role: "Reels, posts and stories",         logo: "instagram", bg: "linear-gradient(45deg,#feda75,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5)", count: "934K",   unit: "followers", url: "https://www.instagram.com/pjexplained" },
-    { name: "Facebook",  handle: "PJ Explained", role: "Videos and updates",         logo: "facebook",  bg: "#0866ff", count: "188K",   unit: "followers", url: "https://www.facebook.com/pjexplained" },
-    { name: "Threads",   handle: "@pjexplained", role: "Quick takes and updates",         logo: "threads",   bg: "#000",    count: "127.9K", unit: "followers", url: "https://www.threads.net/@pjexplained" },
+    { name: "Instagram", handle: "@pjexplained", role: "Reels, posts and stories",         logo: "instagram", bg: "linear-gradient(45deg,#feda75,#fa7e1e 25%,#d62976 50%,#962fbf 75%,#4f5bd5)", count: "940K",   unit: "followers", url: "https://www.instagram.com/pjexplained" },
+    { name: "Facebook",  handle: "PJ Explained", role: "Videos and updates",         logo: "facebook",  bg: "#0866ff", count: "192K",   unit: "followers", url: "https://www.facebook.com/pjexplained" },
+    { name: "Threads",   handle: "@pjexplained", role: "Quick takes and updates",         logo: "threads",   bg: "#000",    count: "128.7K", unit: "followers", url: "https://www.threads.net/@pjexplained" },
     { name: "X",         handle: "@pjexplained", role: "Posts and film chatter",         logo: "x",         bg: "#000",    count: "61.8K",  unit: "followers", url: "https://x.com/pjexplained" },
     { name: "Snapchat",  handle: "@pjexplained", role: "Stories and behind the scenes",         logo: "snapchat",  bg: "#fffc00", fg: "#000", url: "https://www.snapchat.com/add/pjexplained" },
     { name: "WhatsApp",  handle: "PJ Explained channel", role: "Channel for new video alerts", logo: "whatsapp",  bg: "#25d366", url: "https://whatsapp.com/channel/0029VaijEmHFXUuRpevXex2o" },
@@ -143,27 +143,27 @@ const PJ = {
 
   // Latest YouTube uploads. id = the part after "watch?v=". date = day it went live.
   latest: [
-    { id: "gUsoCNnDZb4", channel: "PJ Explained",   date: "2026-10-22", views: "284K", title: "VFX Ko Roast Karne Se Pehle Ye Video Dekh Lena" },
-    { id: "5cDmLn2A0do", channel: "thePJ",          date: "2026-10-21", views: "743K", title: "Ramayana: Ravana Tandav (Song) • Reaction" },
-    { id: "VrAqu5_tq2s", channel: "Men of Culture", date: "2026-10-18", views: "636K", title: "Ramayana Trailer Surprised Us! Jailer 2 and more" },
-    { id: "j5IvJ9lcnEs", channel: "PJ Explained",   date: "2026-10-20", views: "1.2M", title: "Ramayan Universe LEAKED! Namit Malhotra's Big Plan Explained" },
-    { id: "y9AVAc-P7EE", channel: "PJ Explained",   date: "2026-10-17", views: "758K", title: "Hidden Details In Ramayana Trailer You Missed" },
-    { id: "zo0Ky8Y7EnI", channel: "PJ Explained",   date: "2026-10-16", views: "1.1M", title: "Namit Bhai, I'm Sorry — Ramayana New Trailer" },
-    { id: "2OhooBzPkdM", channel: "PJ Explained",   date: "2026-10-16", views: "630K", title: "Jailer 2 Movie Review" },
-    { id: "pR3jJlXSMm0", channel: "thePJ",          date: "2026-10-17", views: "340K", title: "I Saw Street Fighter Movie" },
-    { id: "G-GOouv3dDI", channel: "PJ Explained",   date: "2026-10-12", views: "798K", title: "Avengers Doomsday All Deaths According To Leaks" }
+    { id: "tKwgM_hApwU", channel: "PJ Explained",   date: "2026-11-09", views: "497K", title: "Ramayana Movie vs Valmiki Ramayan | Fact Check" },
+    { id: "vWzORJy4PBM", channel: "Men of Culture", date: "2026-11-07", views: "688K", title: "First Time in Indian Cinema: Ramayana Movie Discussion" },
+    { id: "50nAp0xuY0E", channel: "PJ Explained",   date: "2026-11-06", views: "1.8M", title: "Ramayana Post-Credit Scene & Ending Explained" },
+    { id: "W91hLf4r1rY", channel: "PJ Explained",   date: "2026-11-05", views: "1.6M", title: "Ramayana Movie Review (Spoiler-Free)" },
+    { id: "LO0X9TKX6yM", channel: "Men of Culture", date: "2026-11-03", views: "705K", title: "We Watched Adipurush Again (Live Reaction)" },
+    { id: "BtuLdsziCPE", channel: "PJ Explained",   date: "2026-11-02", views: "822K", title: "Watch This Before Ramayana Part 1" },
+    { id: "ius56OJAEf8", channel: "PJ Explained",   date: "2026-10-29", views: "958K", title: "Why Bhojpuri Songs Are Soo Vulgar?" },
+    { id: "UtvAD7AoFS8", channel: "thePJ",          date: "2026-10-28", views: "292K", title: "Jumanji 3 Open World Trailer • Reaction" },
+    { id: "6kRZ55k0Eg8", channel: "thePJ",          date: "2026-10-27", views: "300K", title: "The Ramayan Marketing Scam Is Crazy" }
   ],
 
   // Slider on /links: latest PJ Explained uploads
   pjVideos: [
-    { id: "gUsoCNnDZb4", date: "2026-10-22", views: "284K", title: "VFX Ko Roast Karne Se Pehle Ye Video Dekh Lena" },
-    { id: "j5IvJ9lcnEs", date: "2026-10-20", views: "1.2M", title: "Ramayan LEAK Explained — Namit Malhotra's Huge Plans" },
-    { id: "u74Afz0yf4A", date: "2026-10-01", views: "1.4M", title: "Worst Ramayan I've Ever Seen — Anjali Arora's Ramayan" },
-    { id: "zo0Ky8Y7EnI", date: "2026-10-16", views: "1.1M", title: "Namit Bhai, I'm Sorry — Ramayana New Trailer" },
-    { id: "sUk4kElUL3E", date: "2026-10-01", views: "808K", title: "Dear Ramayana Marketing!" },
-    { id: "G-GOouv3dDI", date: "2026-10-12", views: "798K", title: "Avengers Doomsday All Deaths According To Leaks" },
-    { id: "y9AVAc-P7EE", date: "2026-10-17", views: "758K", title: "Top 10 Details You Missed In Ramayana Trailer" },
-    { id: "2OhooBzPkdM", date: "2026-10-15", views: "630K", title: "Jailer 2 Movie Review" }
+    { id: "tKwgM_hApwU", date: "2026-11-09", views: "497K", title: "Ramayana Movie vs Valmiki Ramayan | Fact Check" },
+    { id: "50nAp0xuY0E", date: "2026-11-06", views: "1.8M", title: "Ramayana Post-Credit Scene & Ending Explained" },
+    { id: "W91hLf4r1rY", date: "2026-11-05", views: "1.6M", title: "Ramayana Movie Review (Spoiler-Free)" },
+    { id: "BtuLdsziCPE", date: "2026-11-02", views: "822K", title: "Watch This Before Ramayana Part 1" },
+    { id: "ius56OJAEf8", date: "2026-10-29", views: "958K", title: "Why Bhojpuri Songs Are Soo Vulgar?" },
+    { id: "qE6W9U6VvqE", date: "2026-10-27", views: "655K", title: "Avengers Doomsday Exclusive Preview Trailer Breakdown" },
+    { id: "gUsoCNnDZb4", date: "2026-10-22", views: "951K", title: "Namit Malhotra Just Out-Detail Aditya Dhar" },
+    { id: "j5IvJ9lcnEs", date: "2026-10-20", views: "1.3M", title: "Ramayan Biggest Leak Yet! Namit Malhotra's Entire Vision" }
   ],
 
   // thePJ — the raw, real side of PJ Explained
@@ -171,19 +171,19 @@ const PJ = {
     name: "thePJ", handle: "@thepjoffical", url: "https://www.youtube.com/@thepjoffical",
     blurb: "The raw, unfiltered side of PJ Explained — first reactions the moment a trailer drops, no script, no edits.",
     stats: [
-      { value: "446K",  label: "subscribers" },
-      { value: "171M+", label: "views" },
-      { value: "997K",  label: "top reaction this month" }
+      { value: "450K",  label: "subscribers" },
+      { value: "174M+", label: "views" },
+      { value: "1.06M", label: "top reaction this month" }
     ],
     videos: [
-      { id: "f9cR6ltgwBA", date: "2026-10-16", views: "997K", title: "Ramayana Hindi Trailer • Reaction" },
-      { id: "tsxLGRUKdIg", date: "2026-10-16", views: "779K", title: "Ramayana English Dub Trailer • Reaction" },
-      { id: "5cDmLn2A0do", date: "2026-10-21", views: "745K", title: "Ramayana: Ravana Tandav (Song) • Reaction" },
-      { id: "Ua9PbHjgpPs", date: "2026-10-01", views: "511K", title: "This Actually Looks Fun" },
-      { id: "jm2fB2vbfYg", date: "2026-10-08", views: "449K", title: "Jailer 2 Trailer • Reaction" },
-      { id: "TDf87nN9X_E", date: "2026-10-08", views: "411K", title: "Jailer Movie Review" },
-      { id: "2GYyvnYaFEU", date: "2026-10-09", views: "370K", title: "Ranabaali Trailer • Reaction" },
-      { id: "pR3jJlXSMm0", date: "2026-10-17", views: "340K", title: "I Saw Street Fighter Movie" }
+      { id: "UtvAD7AoFS8", date: "2026-10-28", views: "292K",  title: "Jumanji 3 Open World Trailer • Reaction" },
+      { id: "6kRZ55k0Eg8", date: "2026-10-27", views: "300K",  title: "The Ramayan Marketing Scam Is Crazy" },
+      { id: "Tod4BSBl4_w", date: "2026-10-24", views: "592K",  title: "Avengers Doomsday Exclusive Preview Trailer • Reaction" },
+      { id: "oMhu563o3Do", date: "2026-10-24", views: "337K",  title: "Fauzi Glimpse • Reaction" },
+      { id: "dvjY-2heJV0", date: "2026-10-24", views: "149K",  title: "I Saw Clayface Movie" },
+      { id: "5cDmLn2A0do", date: "2026-10-20", views: "839K",  title: "Ramayana: Ravana Tandav (Song) • Reaction" },
+      { id: "pR3jJlXSMm0", date: "2026-10-16", views: "357K",  title: "I Saw Street Fighter Movie" },
+      { id: "f9cR6ltgwBA", date: "2026-10-15", views: "1.06M", title: "Ramayana Hindi Trailer • Reaction" }
     ]
   },
 
